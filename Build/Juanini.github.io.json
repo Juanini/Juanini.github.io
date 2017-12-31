@@ -1,0 +1,11 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "Juanini.github.io.data.unityweb",
+"asmCodeUrl": "Juanini.github.io.asm.code.unityweb",
+"asmMemoryUrl": "Juanini.github.io.asm.memory.unityweb",
+"asmFrameworkUrl": "Juanini.github.io.asm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
