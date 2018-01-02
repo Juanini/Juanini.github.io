@@ -1,40 +1,38 @@
 {
   "_meta": {
     "maxChars": {
-      "mode_constellations": 20,
-      "desc_constellations": 200,
-      "mode_shadows": 20,
-      "desc_shadows": 200,
-      "mode_moon": 20,
-      "desc_moon": 200
+      
     }
   },
   "en": {
-    "MoonPhase": "Moon Phase",
-    "NewMoon": "New Moon",
-    "WaxingCrescentMoon": "Waxing Crescent Moon",
-    "FirstQuarterMoon": "First Quarter Moon",
-    "WaxingGibbousMoon": "Waxing Gibbous Moon",
-    "FullMoon": "Full Moon",
-    "WanningGibbousMoon": "Wanning Gibbous Moon",
-    "ThirdQuarterMoon": "Third Quarter Moon",
-    "WanningCrescentMoon": "Wanning Crescent Moon",
-
-    "Desc_NewMoon": "When the Moon moves between Earth and the Sun, the side facing Earth is completely dark. Only the side of the Moon facing away from Earth is lit.",
-    "Desc_WaxingCrescentMoon": "After the new moon phase the moon begins to be seen again. Gradually it starts to appear as part of its surface that is illuminated can be seen.",
-    "Desc_FirstQuarterMoon": "Like always, one side of the Moon is completely lit by the Sun. What has changed is the Moon's position with respect to Earth. We are only able to see half of that half lit portion.",
-    "Desc_WaxingGibbousMoon": "Is an intermediate Moon phase which starts after the First Quarter Moon and lasts until the Full Moon.",
-    "Desc_FullMoon": "The whole side facing Earth is lit. This happens when Earth is between the Moon and the Sun.",
-    "Desc_WanningGibbousMoon": "Is an intermediate Moon phase which starts after Full Moon and lasts until half of the Moon's surface is illuminated at Third Quarter Moon.",
-    "Desc_ThirdQuarterMoon": "Is when the opposite half of the Moon is illuminated compared to the First Quarter. ",
-    "Desc_WanningCrescentMoon": "The illuminated part of the Moon decreases from a semicircle at Third Quarter until it disappears from view entirely at New Moon.",
-
-    "play": "Play",
-    "mode_constellations": "NAVIGATION WITH CONSTELLATIONS",
-    "desc_constellations": "A constellation is a group of visible stars that form a pattern when viewed from Earth. The pattern they form may take the shape of an animal, a mythological creature, a man, a woman, or an inanimate object such as a microscope, a compass, or a crown.",
-    "mode_shadows": "SHADOWS",
-    "desc_shadows": "Shadoes mode desc",
-    "mode_moon": "MOON PHASES",
-    "desc_moon": "Unlike the Sun, the Moon does not produce any light of its own. It only reflects light from the Sun. Only the side of the Moon facing the Sun is lit. As the Moon moves around the Earth, we see different parts of the Moon being lit up by the Sun. This is what causes the phases of the Moon. As the Moon revolves around Earth, it changes from fully lit to completely dark and back again."
-  }
+   "Key": "Value",
+   "Next": "Next",
+   "Information": "Information",
+   "Water Roots": "Water Roots",
+   "SelectLevel": "Select Level",
+   "Presentation": "All organisms have structures, which are the physical parts that make up an organism. This structures have different purposes, or functions.",
+    "StructureandFunctions": "Structure and Functions in Plants.",
+    "Flower": "FLOWER",
+    "Flowerpurpose": "The purpose of the flower is to allow the plant to reproduce through pollination. The flowers have special properties to attract certain animals to help them to reproduce, like color and odor.",
+    "Leaves": "LEAVES",
+    "Leavespurpose": "The function of leaves is to help the plant produce food by converting sunlight, water, and carbon dioxide into energy and oxygen through photosynthesis in their internal structure.",
+    "Stem": "STEM",
+    "Steampurpose": "Supports the leaves, flowers and fruits and connects them with the roots. Conducts water in , nutrients and the products of photosynthesis to and from roots and leaves. Helps store water, as in cacti, and the products of photosynthesis.",
+    "Roots": "ROOTS",
+    "Rootspurpose": "Absorb water and nutrients from the soil.",
+    "Seed": "SEED",
+    "Seedpurpose": "Nourishment of the embryo, dispersal to a new location, and dormancy during unfavorable conditions.",
+    "VascularPlants": "VASCULAR PLANTS",
+    "VascularplantsDescription": "Vascular plants have true stem, leaves and roots. Tubes within a plant stem move water and nutrients upwards from the plant roots, allowing the plant to grow. ",
+    "NonVascular": "NON VASCULAR PLANTS",
+    "NonVascularDescription": "Do not have true stem, root system or leaves. Some plants have root like structures, which is called as rhizoids. Due to unavailability of water conducting tissues non vascular plants are tender and comparatively shorter than vascular plants. Non vascular plants are associated with water sources or swamps.",
+    "Tutorial": "Tutorial",
+    "Guide": "Guide the roots to water clusters.",
+    "Select": "Select the shortest path before the plant dries.",
+    "PlantGrowing": "With the water and nutrient obtained from the roots together with the sunlight and carbon dioxide from the air, the photosynthesis takes place in the leaves generating energy for the plant to grow and reproduce.",
+    "Barbseed": "In the fur of a chipmunk the barbs seeds can get entangled, helping the plant to grow in a new place.",
+    "Zinnia": "The Bees likes bright flowers with fresh smells, the bees help pollination to happens by moving pollen from one plant to another.",
+    "Berri": "Hermit eat berries, fruits and seeds.  After digesting the berri, the seeds are thrown in a new location.",
+    "Acorn": "The squirrels like acorn, they save it for later but may not come back. It can grow into a new plant.",
+ }
 }
