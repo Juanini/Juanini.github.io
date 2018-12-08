@@ -3,17 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Legends of Learning | Clima</title>
-    <link rel="stylesheet" href="https://game-cdn.legendsoflearning.com/assets/lol.css" />
-    <script src="https://game-cdn.legendsoflearning.com/assets/lol.js"></script>
+    <title>Unity WebGL Player | StructureOfMatter</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>  
     <script src="Build/UnityLoader.js"></script>
     <script>
-	// disable mobile webgl warning (important for ipad support)
-      UnityLoader.compatibilityCheck = function (e, t, r) { t(); };
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Juanini.github.io.json");
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Juanini.github.io.json", {onProgress: UnityProgress});
     </script>
   </head>
   <body>
-    <div id="gameContainer" style="width: 1024px; height: 576px; margin: auto"></div>
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 1024px; height: 576px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+        <div class="title">StructureOfMatter</div>
+      </div>
+    </div>
   </body>
 </html>
