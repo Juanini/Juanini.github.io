@@ -49,13 +49,20 @@
 	"CharSelGas":"Gas",
 	"------------- Mini Games":"---------------------------------------------------------------------",
 	"TutoCollect":"Collect the 4 particles!",
-	"TutoIce":"Click on the screen to Jump.",
+	"TutoIce":"Click on a column to move the character.",
 	"TutoLiquid":"Tap and move the liquid horizontally on the screen to avoid the dangers.",
 	"TutoGas":"Click on a row to move the character.",
 	"InfoSolid":"Particles in solids are very close to each other, so they have less space to move. Has a definite shape.",
 	"InfoLiquid":"Particles in liquids are loosely joined together, that is why they are able to move. They can be moved to any container and they will take the container shape.",
 	"InfoGas":"Particles are far apart from each other, so they can move freely. Gases don’t have a shape, but they take the shape of the container that holds them, like a balloon.",
+	"------------- Puzzles":"---------------------------------------------------------------------",
 	"TutoPuzzle":"Select the correct state of matter to solve the puzzle.",
+	"PuzzleIceRequirement":"We need an state that conserve his form to activate the mechanism.",
+	"PuzzleIceWrong":"Oh no! This state doesn’t maintains its shape out of its container.",
+	"PuzzleWaterRequirement":"We need a state of matter that go through the pipeline.",
+	"PuzzleWaterWrong":"Oh no! This state doesn’t go through to the other side of the pipeline.",
+	"PuzzleGasRequirement":"We need an state that can go above the barrier.",
+	"PuzzleGasWrong":"Oh no! This state cant go above the barrier.",
 	"EndText":"Congratulations! On this trip we discovered the matter and its states!"
   }
 }
