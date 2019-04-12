@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "maxChars": {
+      "welcome": 20,
+      "readyToPlay": 20,
+      "pressContinue": 50,
+      "greatJob": 20,
+      "onePlusOne": 30
+    }
+  },
+  "en": {
+    "GUI":    "*********************************************************************************************",
+    "gameName": "Samurai Game",
+    "playButton": "Play",
+
+    "INTTRO": "*********************************************************************************************",
+    "IntroA": "Hello my name is Yozu Akemi I am from a samurai family and I love painting wood.",
+    "IntroB": "Help me improve my sword techniques for the next competition.",
+    "IntroC": "First we must review the multiplication technique.",
+
+    "MULTI_INFO": "*****************************************************************************************",
+    "MultiInfoA": "Let's start with 5 x 4",
+    "MultiInfoB": "It can be read as 5 times as big as 4",
+    "MultiInfoC": "Where 5 is the scaling factor and 4 is the quantity",
+    "MultiInfoD": "We can read it also as",
+    "MultiInfoE": "4 plus 4 plus 4 plus 4 plus 4",
+    "MultiInfoF": "or 4 times as big as 5"
+  }
+}
