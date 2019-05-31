@@ -12,6 +12,9 @@
     "GUI":    "*********************************************************************************************",
     "gameName": "Samurai Game",
     "playButton": "Play",
+    "continueButton": "Continue",
+    "numerator": "Numerator",
+    "denominator": "Denominator",
 
     "INTTRO": "*********************************************************************************************",
     "IntroA": "Hello my name is Yozu Akemi I am from a samurai family and I love painting wood.",
@@ -24,6 +27,44 @@
     "MultiInfoC": "Where 5 is the scaling factor and 4 is the quantity",
     "MultiInfoD": "We can read it also as",
     "MultiInfoE": "4 plus 4 plus 4 plus 4 plus 4",
-    "MultiInfoF": "or 4 times as big as 5"
+    "MultiInfoF": "or 4 times as big as 5",
+    "MultiInfoSpeak": "Let's start with 5 x 4, It can be read as 5 times as big as 4, Where 5 is the scaling factor and 4 is the quantity, We can read it also as 4 plus 4 plus 4 plus 4 plus 4 or 4 times as big as 5",
+
+    "LOGS_ADDIITON_GAME": "*****************************************************************************************",
+    "LogsAddGameA": "Now that we now the basic technique lets practice, solve 3x2",
+    "LogsAddGameB": "Select the correct log amount to solve the multiplication.",
+    "LogsAddGameC": "Drag and drop the correct amount",
+
+    "INGAME_INTRO": "*****************************************************************************************",
+    "IngameIntro": "I will show you an advanced technique: Sasuki the multiplication of fractions.",
+    "IngameIntro1": "The multiplication of fractions also has a scaling factor and a quantity.",
+    "IngameIntro2": "Each fraction has two parts, a numerator and a denominator.",
+    "IngameIntro3": "We will make the first fraction in the wood.",
+    "IngameIntro4": "We are going to divide the wood into the amount of the denominator.",
+    "IngameIntro5": "Let's paint the amount of the numerator.",
+    "IngameIntro6": "We will make the second fraction in the second wood.",
+    "IngameIntro7": "We are going to divide the wood into the amount of the denominator.",
+    "IngameIntro8": "Let's paint the amount of the numerator.",
+    "IngameIntro9": "Let's join the woods to calculate the result!",
+    "IngameIntro9.1": "First we add the vertical one.",
+    "IngameIntro9.2": "Then we add the horizontal parts.",
+    "IngameIntro10": "For the numerator we are going to paint the overlapping sections.",
+    "IngameIntro11": "For the denominator, we will select each section in which the wood is divided.",
+    "IngameIntro12": "¾ times as big as ⅔ the result is 6/12.",
+    "IngameIntro13": "Good job!.",
+    "IngameIntro14": "Now is your turn. You can do it!",
+
+    "EXERCISES": "*****************************************************************************************",
+    "Exercises1": "Let's start with the first fraction.",
+    "Exercises2": "Divide the wood into its denominator. (click on the first log)",
+    "Exercises3": "Good Job!",
+    "Exercises4": "Now paint the numerator.",
+    "Exercises5": "Now we'll make the second fraction.",
+    "Exercises6": "Now we combine the divisions we generated.",
+    "Exercises7": "Let's calculate the numerator. Paint the overlapping sections.",
+    "Exercises8": "Let's calculate the denominator. Select all the sections in which the wood was divided.",
+    "Exercises9": "Good Job! I knew you could do it!",
+
+    "ExerciseTitle": "Exercise"
   }
 }
