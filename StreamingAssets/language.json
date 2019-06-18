@@ -45,6 +45,7 @@
     "intro31": "Click on the median slime.",
     "intro32": "Click on the slime with the lowest score.",
     "intro33": "Click the slime with the highest score.",
-    "intro34": "Congratulation! We created the Box plot! The legendary vessel of slimes! "
+    "intro34": "Congratulation! We created the Box plot! The legendary vessel of slimes! ",
+    "endGame": "We have found all the bright quartiles, now it is time to color with the bright paint and bring happiness to the world. CONGRATULATIONS!!"
   }
 }
