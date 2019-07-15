@@ -1,0 +1,16 @@
+{
+"companyName": "DefaultCompany",
+"productName": "MathEdu_DivisionOfRationalNum",
+"dataUrl": "SamuraiPainter.data.unityweb",
+"wasmCodeUrl": "SamuraiPainter.wasm.code.unityweb",
+"wasmFrameworkUrl": "SamuraiPainter.wasm.framework.unityweb",
+"asmCodeUrl": "SamuraiPainter.asm.code.unityweb",
+"asmMemoryUrl": "SamuraiPainter.asm.memory.unityweb",
+"asmFrameworkUrl": "SamuraiPainter.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"}
+}
