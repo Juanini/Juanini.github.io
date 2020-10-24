@@ -1,74 +1,82 @@
-{"en":
-	{
-		"Tutorial12":"Fill the first bottle with negative soda.\r\nFill the second bottle with positive soda.\r\nAccording to the laws of signs, select the correct soda.",
-		"SeparationTutorial":"*************************************************",
-		"TutorialExtraGood":"Good job! The result is the dividend of our previous recipe!",
-		"Tutorial5":"The second bottle should be filled with a positive drink (+4), click on the yellow button.",
-		"EndScreen":"*******************************",
-		"Intro2":"We are going to divide the soda into two parts.",
-		"Intro1":"Integers can be divided. An integer is a complete unit, like a cake, a pencil, or a soda.",
-		"gameName":"Samurai Game",
-		"Tutorial9":"Fill the last bottle with the negative drink.",
-		"Tutorial7":"Now according to the laws of signs, the sign of the quotient must be.",
-		"DialogSkipWait":"1.0",
-		"Tutorial18":"Now let's prepare the special drink!",
-		"Tutorial1":"The machines contain negative (-) or positive (+) soda, click on the buttons to fill the bottles correctly.",
-		"Signs5":"You can consult these rules whenever you want by clicking the information button!",
-		"TUTO":"*****************************************************************************************",
-		"Signs1":"Do you know the rule for dividing signed numbers?",
-		"Tutorial20":"The second part of the recipe is to multiply the quotient by the divisor.",
-		"History5":"Ah! Don't worry it's very simple, I'll teach you.",
-		"MessageBoxSigns2":"Rule for dividing signed numbers:\r\npositive ÷ negative = negative\r\nnegative ÷ positive = negative\r\nnegative ÷ negative = positive\r\npositive ÷ positive = positive",
-		"Tutorial17":"Well done! The dividend was +10",
-		"Tuto5":" ",
-		"Tuto3":"Now click on the next one.",
-		"Tutorial10":"Congratulations! The result was a negative relaxing drink!",
-		"Tutorial11":"To check the rule for dividing signed numbers, we take the quotient of the previous division (-2) and multiply it by its divisor (4) and we will obtain the dividend together with its sign.",
-		"Tutorial21":"Did you know that the division can be expressed in another way? \r\nAs we already reviewed in the first recipe: \r\n15/-3=-5 and we review that -5x-3=15 \r\nIf we join these two recipes is as follows 15/-3x-5=15 \r\nThis is another way of expressing the division!",
-		"EndScreen1":"The special drink of Dr. Pepperational Cola Drinkvide is ready! Thanks to the divisions and the rule for dividing signed numbers we were able to do it!",
-		"Config":"************************",
-		"Signs3":"The division sign(/) is also expressed as divided by (÷).",
-		"denominator":"Denominator",
-		"Tutorial15":"Good job!",
-		"playButton":"Play",
-		"Tutorial4":"Well done!",
-		"TutorialExtraBad":"Let's review again The rule for dividing signed numbers.",
-		"Signs4":"The sign of the quotient depends on the signs of the dividend and the divisor.",
-		"MessageBoxSigns1":"8/2 = 4\r\nis equal to\r\n+8 / +2 = +4\r\n\r\n8/2 = 8 / 2\r\n\r\nAll the numbers of the fraction are positive although their sign is not obvious. ",
-		"numerator":"Numerator",
-		"Tuto6":"Excellent! We finished the first order.",
-		"GUI":"*********************************************************************************************",
-		"History4":"YOU! You must help me, your face tells me that you understand the division of rational numbers. Am I wrong?",
-		"ExerciseTitle":"Exercise",
-		"TutorialRecipes":"****************",
-		"Tutorial13":"Good job! The result is the dividend of our previous recipe!",
-		"Tutorial16":"To check the rule for dividing signed numbers: The quotient will be multiplied by the divisor and we apply the rule for dividing signed numbers to obtain its sign.",
-		"History2":"Anyway, my name is Doctor Pepperational Cola Drinkvide. I'm about to discover a fascinating soda, unique in the world that will make everyone happy.",
-		"EndScreen3":"Congratulations!",
-		"Tutorial3":"According to the recipe (-8 divided by 4 =?, the first soda must contain negative drink (-8). Click on the magenta button until it is filled.",
-		"Tuto1":"Now help me to fill these sodas according to the division.",
-		"Tutorial":"***********************",
-		"Intro3":"The soda is equal to 2 parts of 2, (2/2). 2 divided by 2 is equal to 1.",
-		"Validate":"Validate",
-		"Tutorial19":"Excellent!",
-		"Tutorial8":"Negative divided by Positive is      NEGATIVE!",
-		"Signs":"*****************************************************************************************",
-		"EXTRA":"***************************************************",
-		"Tutorial2":"This is the new recipe (-8 divided by 4 =?). Fill the bottles with the right drink and help me to discover the result!",
-		"Tutorial14":"Let's make the following recipe:",
-		"Signs2":"Numbers have a positive sign (+) or a negative sign(-). Positive signs are not written.",
-		"History3":" I have a problem, I don’t have an assistant that can help me to create the definitive soda. Wait!",
-		"continueButton":"Continue",
-		"Intro4":"If we take a half, there will be another ½.",
-		"Tuto2":"Click on the machine once to fill a fraction, until it is the correct fraction.",
-		"EndScreen2":"Thanks for playing!",
-		"INTRO":"**************************************************************************************************************",
-		"Tuto4":"Control",
-		"LabelCongratulations":"Congratulations",
-		"LabelContinue":"Continue",
-		"Intro5":"Now if we divide that soda among 4 people, we will have 4 servings in total, meaning 4/4, and if we take 3 servings, there will be only ¼ left.",
-		"Tutorial6":"Good job!",
+{
+  "_meta": {
+    "maxChars": {
+    }
+  },
+  "en": {
+    "UI_PLAY": "PLAY",
+    "UI_LEVEL_FOREST": "FOREST!",
+    "UI_LEVEL_DESERT": "DESERT!",
+    "UI_LEVEL_JUNGLE": "JUNGLE!",
+    "UI_BALANCE_LINE": "LINE OF PERFECT BALANCE",
+    "UI_LEVEL_COMPLETE": "Good Job! All is in Balance!",
+    "UI_THANKS": "Thanks for playing!",
 
-		"History1":"Welcome to my high-tech soda factory.",
-		"HISTORY":"*********************************************************************************************",
-		"Intro6":"When the negative sign appears in the numerator or denominator the whole fraction becomes negative, for example 1/-2 is equal to -1/2."},"_meta":{"maxChars":{"welcome":20,"readyToPlay":20,"pressContinue":50,"onePlusOne":30,"greatJob":20}}}
+
+    "UI_TITLE_WEATHER": "Weather",
+    "UI_TITLE_PRODUCER": "Producer",
+    "UI_TITLE_PRIMARY": "Primary Consumer",
+    "UI_TITLE_SECONDARY": "Secondary Consumer",
+    "UI_TITLE_APEX": "Apex Predator",
+    "UI_TITLE_COMPOST": "Decomposer",
+
+
+    "TUTO_A": "This is the line of balance!",
+    "TUTO_B": "You need to balance your ecosistem adding elements!",
+    "TUTO_C": "Now is your turn!",
+
+
+    "ERROR_BALANCE_1": "Remember that all living and non-living things are related for an ecosystem to be successful.",
+    "ERROR_BALANCE_2": "Remember that the levels of sun and rain must be adequate for this ecosystem.",
+    "ERROR_BALANCE_3": "Remember that organic waste can be used as nutrients for the soil.",
+    "ERROR_BALANCE_4": "Remember that if your ecosystem does not have the elements for life, all its inhabitants will migrate to another place.",
+    "ERROR_BALANCE_5": "Remember that all living things require a source of food or energy, such as the sun, water, and soil for plants.",
+    "ERROR_BALANCE_6": "Remember that an ecosystem must maintain a balance between consumers and producers.",
+
+
+    "INFO_VIDEO_1_A": "The fundamental source of energy in almost all ecosystems is radiant energy from the Sun.",
+    "INFO_VIDEO_1_B": "The energy of sunlight is used by the ecosystem’s autotrophic, or self-sustaining, organisms.",
+    "INFO_VIDEO_1_C": "Consisting largely of green vegetation, these organisms are capable of photosynthesis.",
+    "INFO_VIDEO_1_D": "They can use the energy of sunlight to convert carbon dioxide and water into simple, energy-rich carbohydrates.",
+
+    
+    "INFO_VIDEO_2_A": "Organic matter generated by autotrophs directly or indirectly sustains heterotrophic organisms.",
+    "INFO_VIDEO_2_B": "Heterotrophs are the consumers of the ecosystem; they cannot make their own food.",
+    "INFO_VIDEO_2_C": "They use, rearrange, and ultimately decompose the complex organic materials built up by the autotrophs.",
+    "INFO_VIDEO_2_D": "All animals and fungi are heterotrophs, as are most bacteria and many other microorganisms.",
+
+
+    "INFO_VIDEO_3_A": "Together, the autotrophs and heterotrophs form various trophic (feeding) levels in the ecosystem: the producer level, composed of those organisms that make their own food. ",
+    "INFO_VIDEO_3_B": "The primary consumer level, composed of those organisms that feed on producers.",
+    "INFO_VIDEO_3_C": "The secondary consumer level, composed of those organisms that feed on primary consumers.",
+    "INFO_VIDEO_3_D": "The movement of organic matter and energy from the producer level through various consumer levels makes up a food chain.",
+    "INFO_VIDEO_3_E": "For example, a typical food chain in a grassland might be grass (producer) -> mouse (primary consumer) -> snake (secondary consumer) -> hawk (tertiary consumer).",
+    "INFO_VIDEO_3_F": "The final link in all food chains is made up of decomposers, those heterotrophs that break down dead organisms and organic wastes.",
+
+    "INFO_VIDEO_4_A": "An ecosystem is a geographic area where plants, animals, and other organisms, as well as weather and landscape, work together to form a bubble of life.",
+    "INFO_VIDEO_4_B": "Ecosystems contain biotic or living, parts, as well as abiotic factors, or nonliving parts.",
+    "INFO_VIDEO_4_C": "Biotic factors include plants, animals, and other organisms.",
+    "INFO_VIDEO_4_D": "Abiotic factors include rocks, temperature, and humidity.",
+
+    "INFO_VIDEO_5_A": "Ecosystems can be very large or very small.",
+    "INFO_VIDEO_5_B": "Tide pools, the ponds left by the ocean as the tide goes out, are complete, tiny ecosystems. Tide pools contain seaweed, a kind of algae, which uses photosynthesis to create food.",
+    "INFO_VIDEO_5_C": "Herbivores such as abalone eat the seaweed.",
+    "INFO_VIDEO_5_D": "Carnivores such as sea stars eat other animals in the tide pool, such as clams or mussels.",
+
+    "INFO_VIDEO_6_A": "Ecosystems are often connected in a larger biome.",
+    "INFO_VIDEO_6_B": "Biomes are large sections of land, sea, or atmosphere. Forests, ponds, reefs, and tundra are all types of biomes, for example."
+
+  },
+  "es": {
+    
+  },
+  "zh": {
+    
+  },
+  "jp": {
+    
+  },
+  "ru": {
+    
+  }
+}
