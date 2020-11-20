@@ -5,9 +5,9 @@
   },
   "en": {
     "UI_PLAY": "PLAY",
-    "UI_LEVEL_FOREST": "FOREST!",
-    "UI_LEVEL_DESERT": "DESERT!",
-    "UI_LEVEL_JUNGLE": "JUNGLE!",
+    "UI_LEVEL_FOREST": "Level 1 - Forest",
+    "UI_LEVEL_DESERT": "Level 2 - Dessert",
+    "UI_LEVEL_JUNGLE": "Final level - Jungle",
     "UI_BALANCE_LINE": "LINE OF PERFECT BALANCE",
     "UI_LEVEL_COMPLETE": "Good Job! All is in Balance!",
     "UI_THANKS": "Thanks for playing!",
@@ -46,15 +46,15 @@
     "INFO_VIDEO_2_D": "All animals and fungi are heterotrophs, as are most bacteria and many other microorganisms.",
 
 
-    "INFO_VIDEO_3_A": "Together, the autotrophs and heterotrophs form various trophic (feeding) levels in the ecosystem: the producer level, composed of those organisms that make their own food. ",
-    "INFO_VIDEO_3_B": "The primary consumer level, composed of those organisms that feed on producers.",
-    "INFO_VIDEO_3_C": "The secondary consumer level, composed of those organisms that feed on primary consumers.",
+    "INFO_VIDEO_3_A": "Producers - Plants are producers: they produce energy for the ecosystem.",
+    "INFO_VIDEO_3_B": "Consumers - Animals are consumers: they don't produce energy, they just use it up.",
+    "INFO_VIDEO_3_C": "Decomposers: break down dead organisms and organic wastes.",
     "INFO_VIDEO_3_D": "The movement of organic matter and energy from the producer level through various consumer levels makes up a food chain.",
     "INFO_VIDEO_3_E": "For example, a typical food chain in a grassland might be grass (producer) -> mouse (primary consumer) -> snake (secondary consumer) -> hawk (tertiary consumer).",
     "INFO_VIDEO_3_F": "The final link in all food chains is made up of decomposers, those heterotrophs that break down dead organisms and organic wastes.",
 
     "INFO_VIDEO_4_A": "An ecosystem is a geographic area where plants, animals, and other organisms, as well as weather and landscape, work together to form a bubble of life.",
-    "INFO_VIDEO_4_B": "Ecosystems contain biotic or living, parts, as well as abiotic factors, or nonliving parts.",
+    "INFO_VIDEO_4_B": "Ecosystems contain living parts that include plants, animals, and other organisms. And nonliving parts that include rocks, temperature, and humidity.",
     "INFO_VIDEO_4_C": "Biotic factors include plants, animals, and other organisms.",
     "INFO_VIDEO_4_D": "Abiotic factors include rocks, temperature, and humidity.",
 
