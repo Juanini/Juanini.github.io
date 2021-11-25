@@ -1,4 +1,4 @@
-import * as THREE from '../build/three.module.js';
+import * as THREE from '/build/three.module.js';
 import * as CONST from '/Const.js';
 import { DragControls } from '/jsm/controls/DragControls.js';
 
