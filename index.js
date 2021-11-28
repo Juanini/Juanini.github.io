@@ -1,13 +1,22 @@
-// import * as THREE from '/build/three.module.js';
-import * as THREE from 'https://cdn.skypack.dev/three@0.135.0';
-import { DragControls } from '/jsm/controls/DragControls.js';
+import * as THREE from '/build/three.module.js';
+// import * as THREE from 'https://cdn.skypack.dev/three@0.135.0';
+
+// import { DragControls } from '/jsm/controls/DragControls.js';
+import threeDragcontrols from 'https://cdn.skypack.dev/three-dragcontrols';
+
 // import { TWEEN } from '/jsm/libs/tween.module.min.js';
 import TWEEN from 'https://cdn.jsdelivr.net/npm/@tweenjs/tween.js@18.5.0/dist/tween.esm.js';
+
 import confetti from 'https://cdn.skypack.dev/canvas-confetti';
+
+// import { TextGeometry } from '/jsm/geometries/TextGeometry.js';
+
+    var listener = null;
 
     let canasta_Composta_Sprite;
     let canasta_Reciclable_Sprite;
     let canasta_Basura_Sprite;
+    let error_sprite;
 
     var width = 0;
     var height = 0;
@@ -79,6 +88,9 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
     const EDIFICIO_B       = "textures/Build2.png";
     const EDIFICIO_C       = "textures/Build3.png";
 
+    // UX
+    const S_ERROR       = "textures/Error.png";
+
     const basuraTextureArray_Composta = [
         S_BASURA_MANZANA, 
         S_BASURA_PLATANO,
@@ -115,7 +127,7 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
     let BASURA_COLLECTED = 0;
 
     let SCORE = 0;
-    let LIFES = 3;
+    let LIFES = 5;
 
     let CANASTA_A_COMPOSTA  = "Canasta_A";
     let CANASTA_B_RECICLABLE = "Canasta_B";
@@ -179,9 +191,17 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
         {
             Drop_Success();
         }
-        else
+        else if(selected_Canasta.name == CANASTA_A_COMPOSTA)
         {
-            Drop_Error();
+            Drop_Error(1);
+        }
+        else if(selected_Canasta.name == CANASTA_B_RECICLABLE)
+        {
+            Drop_Error(2);
+        }
+        else if(selected_Canasta.name == CANASTA_C_BASURA)
+        {
+            Drop_Error(3);
         }
     }
 
@@ -213,10 +233,10 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
                     .easing(TWEEN.Easing.Cubic.In)
                     .start();
         
-                    confetti();
+                    confetti(1000);
     }
 
-    function Drop_Error()
+    function Drop_Error(_pos)
     {
         console.log("xxxxxxxxxxxxxxxxXxxxxx     DROP ERROR     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         document.getElementById("StatusInfo").innerHTML = "ERROR :(";
@@ -231,6 +251,60 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
             updateVidas();
 
         }
+
+        if (_pos == 1) 
+        {
+            ShowError(canasta_Composta_Sprite);
+        } 
+        else if (_pos == 2) 
+        {
+            ShowError(canasta_Reciclable_Sprite);
+        }
+        else if (_pos == 3) 
+        {
+            ShowError(canasta_Basura_Sprite);
+        }
+    }
+
+    function ShowError(canastaPos)
+    {
+        error_sprite.position.set(  canastaPos.position.x, 
+                                    canastaPos.position.y, 
+                                    canastaPos.position.z );
+
+        error_sprite.visible = true;
+
+        new TWEEN.Tween(error_sprite.scale)
+        .to({
+            x: 2.5,
+            y: 2.5,
+            z: 2.5
+        }, 100)
+        .onComplete(() => {
+            new TWEEN.Tween(error_sprite.scale)
+            .to({
+                x: 1.5,
+                y: 1.5,
+                z: 1
+            }, 100)
+            .easing(TWEEN.Easing.Cubic.Out)
+            .start();
+        })
+        .easing(TWEEN.Easing.Cubic.In)
+        .start();
+
+        // new TWEEN.Tween(error_sprite.material.opacity)
+        //     .to({ x:0
+        //     }, 1000)
+        //     .easing(TWEEN.Easing.Cubic.Out)
+        //     .start();
+
+        setTimeout(function() { HideError(); }, 600);
+    }
+
+    function HideError() 
+    {
+        error_sprite.visible = false;    
     }
     
     // * =====================================================================================================================================
@@ -379,6 +453,7 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
 
     function SetBuildings() 
     {
+        return;
 
         const mapAB = textureLoader.load( EDIFICIO_A );
         const material = new THREE.SpriteMaterial( { map: mapAB, color: 0xffffff, fog: true } );
@@ -466,32 +541,38 @@ loader.load(
         const mapB = textureLoader.load( S_CANASTA_RES );
         const materialB = new THREE.SpriteMaterial( { map: mapB, color: 0xffffff, fog: true } );
 
-        let canastaB = new THREE.Sprite( materialB );
-        canastaB.position.set(0, -2.0, 1);
-        canastaB.scale.set(1.5,1.5,1);
-        canastaB.renderOrder = 5;
+        canasta_Reciclable_Sprite = new THREE.Sprite( materialB );
+        canasta_Reciclable_Sprite.position.set(0, -2.0, 1);
+        canasta_Reciclable_Sprite.scale.set(1.5,1.5,1);
+        canasta_Reciclable_Sprite.renderOrder = 5;
 
-        // canastaB.position.normalize();
-
-        //
-
-        scene.add(canastaB);
-        canastaB.name = CANASTA_B_RECICLABLE;
-        groupRayCastB.add(canastaB);
+        scene.add(canasta_Reciclable_Sprite);
+        canasta_Reciclable_Sprite.name = CANASTA_B_RECICLABLE;
+        groupRayCastB.add(canasta_Reciclable_Sprite);
 
         const mapC = textureLoader.load( S_CANASTA_BASURA );
         const materialC = new THREE.SpriteMaterial( { map: mapC, color: 0xffffff, fog: true } );
 
-        let canastaC = new THREE.Sprite( materialC );
-        canastaC.position.set(-2, -2.0, 1);
-        canastaC.scale.set(1.5,1.5,1);
-        canastaC.renderOrder = 5;
+        canasta_Basura_Sprite = new THREE.Sprite( materialC );
+        canasta_Basura_Sprite.position.set(-2, -2.0, 1);
+        canasta_Basura_Sprite.scale.set(1.5,1.5,1);
+        canasta_Basura_Sprite.renderOrder = 5;
 
-        // canastaC.position.normalize();
+        scene.add(canasta_Basura_Sprite);
+        canasta_Basura_Sprite.name = CANASTA_C_BASURA;
+        groupRayCastB.add(canasta_Basura_Sprite);
 
-        scene.add(canastaC);
-        canastaC.name = CANASTA_C_BASURA;
-        groupRayCastB.add(canastaC);
+        const map_Error = textureLoader.load( S_ERROR );
+        const material_Error = new THREE.SpriteMaterial( { map: map_Error, color: 0xffffff, fog: true } );
+
+        error_sprite = new THREE.Sprite( material_Error );
+        // error_sprite.position.set(2, -2.0, 1);
+        error_sprite.scale.set(1.5,1.5,1);
+        error_sprite.renderOrder = 100;
+        error_sprite.visible = false;
+
+        scene.add(error_sprite);
+        groupRayCastB.add(error_sprite);
     }
 
     function init() {
@@ -583,7 +664,7 @@ loader.load(
         // objects.push(sprite);
         // objects.push(testBas);
 
-        controls = new DragControls( [ ... objects ], camera, renderer.domElement );
+        controls = new threeDragcontrols( [ ... objects ], camera, renderer.domElement );
         
         controls.addEventListener( 'drag', render );
 
@@ -664,8 +745,16 @@ loader.load(
         } );
 
         document.addEventListener( 'click', onClick );
+        // document.getElementById("RetryButton").onclick = ResetGame();
 
         spawnVariable =  setInterval(function(){ SpawnBasura(); }, spawnTime);
+
+        createText();
+
+        listener = new THREE.AudioListener();
+		camera.add( listener );
+
+        PlaySong();
 
         updatePuntos();
         updateVidas();
@@ -799,36 +888,36 @@ loader.load(
     // * =====================================================================================================================================
     // * 
 
-    function createText() {
+    function createText()
+    {
+        // let textGeo = new TextGeometry( "ACHIS", {
 
-        textGeo = new TextGeometry( text, {
+        //     font: undefined,
 
-            font: font,
+        //     size: 70,
+        //     height: 20,
+        //     curveSegments: 4,
 
-            size: size,
-            height: height,
-            curveSegments: curveSegments,
+        //     bevelThickness: 2,
+        //     bevelSize: 1.5,
+        //     bevelEnabled: true
 
-            bevelThickness: bevelThickness,
-            bevelSize: bevelSize,
-            bevelEnabled: bevelEnabled
+        // } );
 
-        } );
+        // textGeo.computeBoundingBox();
 
-        textGeo.computeBoundingBox();
+        // const centerOffset = - 0.5 * ( textGeo.boundingBox.max.x - textGeo.boundingBox.min.x );
 
-        const centerOffset = - 0.5 * ( textGeo.boundingBox.max.x - textGeo.boundingBox.min.x );
+        // let textMesh1 = new THREE.Mesh( textGeo);
 
-        textMesh1 = new THREE.Mesh( textGeo, materials );
+        // textMesh1.position.x = 0;
+        // textMesh1.position.y = 0;
+        // textMesh1.position.z = 0;
 
-        textMesh1.position.x = centerOffset;
-        textMesh1.position.y = hover;
-        textMesh1.position.z = 0;
+        // textMesh1.rotation.x = 0;
+        // textMesh1.rotation.y = Math.PI * 2;
 
-        textMesh1.rotation.x = 0;
-        textMesh1.rotation.y = Math.PI * 2;
-
-        group.add( textMesh1 );
+        // scene.add( textMesh1 );
     }
 
     // * =====================================================================================================================================
@@ -852,6 +941,12 @@ loader.load(
     function updateVidas()
     {
         document.getElementById(vidasLabel).innerHTML = "VIDAS: " + LIFES;
+    }
+
+    function ResetGame() 
+    {
+        // location.reload();    
+        console.log("Achis");
     }
 
     // * =====================================================================================================================================
@@ -932,4 +1027,20 @@ loader.load(
 
 				const sky = new THREE.Mesh( skyGeo, skyMat );
 				scene.add( sky );    
+    }
+
+    // * =====================================================================================================================================
+    // * AUDIO
+
+    function PlaySong() 
+    {
+        return;
+
+        const sound1 = new THREE.PositionalAudio( listener );
+        const songElement = document.getElementById( 'song' );
+        sound1.setLoop( true );
+        sound1.setMediaElementSource( songElement );
+        sound1.setRefDistance( 20 );
+        sound1.setVolume( 0.3 );
+        songElement.play();
     }
