@@ -1,5 +1,5 @@
-import * as THREE from '/build/three.module.js';
-// import * as THREE from 'https://cdn.skypack.dev/three@0.135.0';
+// import * as THREE from '/build/three.module.js';
+import * as THREE from 'https://cdn.skypack.dev/three@0.135.0';
 
 // import { DragControls } from '/jsm/controls/DragControls.js';
 import threeDragcontrols from 'https://cdn.skypack.dev/three-dragcontrols';
