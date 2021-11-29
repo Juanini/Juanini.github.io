@@ -28,7 +28,7 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
     let error_sprite;
     let success_sprite;
 
-    let plus_10_sprite;
+    let plus_10_sprite = {};
 
     let canastaScale = 3.5;
     let canastaScaleTween = 4;
@@ -52,6 +52,7 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
     let groupRayCastB;
 
     const  groupBasura = [];
+    const  groupPuntos = [];
 
     let sprite;
 
@@ -305,16 +306,24 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
                     }
                     }());
         
-        ShowPointUX();
+        for (let i = 0; i < groupPuntos.length; i++) {
+            
+            if(!groupPuntos[i].isActive)
+            {
+                groupPuntos[i].doAnim(canastaTemp);
+                break;
+            }
+        }
+        // ShowPointUX();
     }
 
     function ShowPointUX() 
     {
-        // plus_10_sprite.position.set(canasta_Composta_Sprite.position.x, 
-        //                             canasta_Composta_Sprite.position.y,     
-        //                             canasta_Composta_Sprite.position.z);
+        plus_10_sprite.position.set(canasta_Composta_Sprite.position.x, 
+                                    canasta_Composta_Sprite.position.y,     
+                                    canasta_Composta_Sprite.position.z);
 
-        // plus_10_sprite.visible = true;
+        plus_10_sprite.visible = true;
 
 
     }
@@ -490,6 +499,111 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
                     this.isActive = false;
                 }
             }
+        }
+    }
+
+    // * =====================================================================================================================================
+    // * PUNTOS
+
+    class PuntosUX 
+    {
+        constructor(_basuraId, _basuraType)
+        {   
+            this.basuraType = _basuraType;
+            this.basuraId = _basuraId;
+            this.isActive = false;
+
+            this.mapA = null;
+
+            this.spriteChido = null;
+
+            this.setPuntosSprite();
+            
+            scene.add( this.spriteChido );
+            // objects.push(this.spriteChido);
+        }
+
+        setPuntosSprite()
+        {
+            
+            this.mapA = textureLoader.load( S_PLUS_10 );    
+
+            this.material = new THREE.SpriteMaterial( { map: this.mapA, fog: false } );
+
+            this.spriteChido = new THREE.Sprite( this.material );
+            this.spriteChido.renderOrder = 50;
+
+            this.spriteChido.visible = false;
+        }
+
+        getSpriteName()
+        {
+            return this.spriteChido.name;
+        }
+
+        hideS()
+        {
+            this.spriteChido.visible = false;
+        }
+
+        activateBasura()
+        {
+            if(this.isActive) { return; }
+
+            this.spriteChido.visible = true;
+            this.isActive = true;
+            this.setPositionSpawn();
+        }
+
+        doAnim(positionInit)
+        {
+            this.isActive = true;
+
+            let animTime = 750;
+
+            this.spriteChido.scale.set(1, 1, 1);
+
+            this.spriteChido.position.x =  positionInit.position.x - 1;
+            this.spriteChido.position.y =  positionInit.position.y + 0.8;
+            this.spriteChido.position.z =  1;
+
+            this.spriteChido.visible = true;
+
+            new TWEEN.Tween(this.spriteChido.position)
+            .to({
+                x: 0,
+                y: 4.5,
+                z: 1
+            }, animTime)
+            .delay(500)
+            .onComplete(() => {
+                this.isActive = false;
+                this.spriteChido.visible = false;
+                
+            })
+            .easing(TWEEN.Easing.Quartic.InOut)
+            .start();
+
+
+            new TWEEN.Tween(this.spriteChido.scale)
+                    .to({
+                        x: 3,
+                        y: 3,
+                        z: 3
+                    }, animTime / 2)
+                    .onComplete(() => {
+                        new TWEEN.Tween(this.spriteChido.scale)
+                        .to({
+                            x: 0.5,
+                            y: 0.5,
+                            z: 0.5
+                        }, animTime / 2)
+                        .easing(TWEEN.Easing.Back.InOut)
+                        .start();
+                    })
+                    .delay(500)
+                    .easing(TWEEN.Easing.Back.InOut)
+                    .start();
         }
     }
     
@@ -753,6 +867,13 @@ loader.load(
         {
             groupBasura.push(new Basura("basuraId_B_" + i, BASURA_TYPE_BASURA));
         }
+
+        for (let i = 0; i < 15; i++) 
+        {
+            groupPuntos.push(new PuntosUX());
+        }
+
+
 
         // groupBasura.push(new Basura());
         
@@ -1151,12 +1272,14 @@ loader.load(
 				scene.add( sky );    
     }
 
+
+
     // * =====================================================================================================================================
     // * AUDIO
 
     function PlaySong() 
     {
-        // return;
+        return;
 
         // create a global audio source
         const sound = new THREE.Audio( audioListener );
@@ -1200,3 +1323,6 @@ loader.load(
             sound.play();
         });
     }
+
+    // * =====================================================================================================================================
+    // * 
