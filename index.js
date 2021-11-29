@@ -11,12 +11,27 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
 
 // import { TextGeometry } from '/jsm/geometries/TextGeometry.js';
 
+    // AUDIO
+    var audioListener;
+    var audioLoader;
+
+    var soundSuccess;
+    var soundError;
+    var soundClick;
+    var soundPauseMenu;
+
     var listener = null;
 
     let canasta_Composta_Sprite;
     let canasta_Reciclable_Sprite;
     let canasta_Basura_Sprite;
     let error_sprite;
+    let success_sprite;
+
+    let plus_10_sprite;
+
+    let canastaScale = 3.5;
+    let canastaScaleTween = 4;
 
     var width = 0;
     var height = 0;
@@ -90,6 +105,8 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
 
     // UX
     const S_ERROR       = "textures/Error.png";
+    const S_SUCCESS       = "textures/Correct.png";
+    const S_PLUS_10       = "textures/Plus10.png";
 
     const basuraTextureArray_Composta = [
         S_BASURA_MANZANA, 
@@ -144,10 +161,10 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
     let velocidadCaida = 0.02;
     const velocidadCaida_2 = 0.04;
     const velocidadCaida_3 = 0.05;
-    const velocidadCaida_4 = 0.06;
+    const velocidadCaida_4 = 0.03;
 
     var spawnVariable;
-    let spawnTime = 500;
+    let spawnTime = 3000;
 
     let spawnTime_Level2 = 500;
     let spawnTime_Level3 = 0;
@@ -180,16 +197,16 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
         
         if (selected_Canasta.name == CANASTA_A_COMPOSTA && selected_Basura.basuraType == BASURA_TYPE_COMPOSTA) 
         {
-            Drop_Success();
+            Drop_Success(1);
             
         }
         else if (selected_Canasta.name == CANASTA_B_RECICLABLE && selected_Basura.basuraType == BASURA_TYPE_RECICLABE) 
         {
-            Drop_Success();
+            Drop_Success(2);
         }
         else if (selected_Canasta.name == CANASTA_C_BASURA && selected_Basura.basuraType == BASURA_TYPE_BASURA) 
         {
-            Drop_Success();
+            Drop_Success(3);
         }
         else if(selected_Canasta.name == CANASTA_A_COMPOSTA)
         {
@@ -205,41 +222,107 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
         }
     }
 
-    function Drop_Success()
+    function Drop_Success(_pos)
     {
         console.log("=============--------- DROP SUCCESS!!!!!!! -----=======------============");
-        document.getElementById("StatusInfo").innerHTML = "CORRECTO!!";
+    
         SCORE += 125;
         BASURA_COLLECTED++;
         updatePuntos();
         IncrementarVelocidad();
 
-        new TWEEN.Tween(canasta_Composta_Sprite.scale)
+        var canastaTemp;
+
+        PlaySound_Success();
+
+        if (_pos == 1) 
+        {
+            ShowErrorSuccess(canasta_Composta_Sprite, success_sprite);
+            canastaTemp = canasta_Composta_Sprite;
+        } 
+        else if (_pos == 2) 
+        {
+            ShowErrorSuccess(canasta_Reciclable_Sprite, success_sprite);
+            canastaTemp = canasta_Reciclable_Sprite;
+        }
+        else if (_pos == 3) 
+        {
+            ShowErrorSuccess(canasta_Basura_Sprite, success_sprite);
+            canastaTemp = canasta_Basura_Sprite;
+        }
+
+        new TWEEN.Tween(canastaTemp.scale)
                     .to({
-                        x: 2,
-                        y: 2,
-                        z: 2
-                    }, 100)
+                        x: canastaScaleTween,
+                        y: canastaScaleTween,
+                        z: canastaScaleTween
+                    }, 200)
                     .onComplete(() => {
-                        new TWEEN.Tween(canasta_Composta_Sprite.scale)
+                        new TWEEN.Tween(canastaTemp.scale)
                         .to({
-                            x: 1.5,
-                            y: 1.5,
-                            z: 1
-                        }, 100)
-                        .easing(TWEEN.Easing.Cubic.Out)
+                            x: canastaScale,
+                            y: canastaScale,
+                            z: canastaScale
+                        }, 150)
+                        .easing(TWEEN.Easing.Back.InOut)
                         .start();
                     })
-                    .easing(TWEEN.Easing.Cubic.In)
+                    .easing(TWEEN.Easing.Back.InOut)
                     .start();
         
-                    confetti(1000);
+                    // confetti({
+                    //     particleCount: 200,
+                    //     spread: 70,
+                    //     origin: { 
+                    //         x: 0.5,
+                    //         y:  0.95}
+                    //   });
+
+                    //   console.log(( canastaTemp.position.x + 1) * window.innerWidth / 2);
+
+                    var end = Date.now() + (0.5 * 1000);
+
+                    // var colors = ['#bb0000', '#ffffff'];
+
+                    (function frame() {
+                    confetti({
+                        particleCount: 4,
+                        angle: 60,
+                        spread: 80,
+                        origin: { x: 0.1, y: 1 }
+                        // colors: colors
+                    });
+                    confetti({
+                        particleCount: 4,
+                        angle: 120,
+                        spread: 80,
+                        origin: { x: 0.9, y: 1 }
+                        // colors: colors
+                    });
+
+                    if (Date.now() < end) {
+                        requestAnimationFrame(frame);
+                    }
+                    }());
+        
+        ShowPointUX();
+    }
+
+    function ShowPointUX() 
+    {
+        // plus_10_sprite.position.set(canasta_Composta_Sprite.position.x, 
+        //                             canasta_Composta_Sprite.position.y,     
+        //                             canasta_Composta_Sprite.position.z);
+
+        // plus_10_sprite.visible = true;
+
+
     }
 
     function Drop_Error(_pos)
     {
         console.log("xxxxxxxxxxxxxxxxXxxxxx     DROP ERROR     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-        document.getElementById("StatusInfo").innerHTML = "ERROR :(";
+        
         LIFES--;
 
         if (LIFES <= 0) 
@@ -252,36 +335,38 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
 
         }
 
+        PlaySound_Error();
+
         if (_pos == 1) 
         {
-            ShowError(canasta_Composta_Sprite);
+            ShowErrorSuccess(canasta_Composta_Sprite, error_sprite);
         } 
         else if (_pos == 2) 
         {
-            ShowError(canasta_Reciclable_Sprite);
+            ShowErrorSuccess(canasta_Reciclable_Sprite, error_sprite);
         }
         else if (_pos == 3) 
         {
-            ShowError(canasta_Basura_Sprite);
+            ShowErrorSuccess(canasta_Basura_Sprite, error_sprite);
         }
     }
 
-    function ShowError(canastaPos)
+    function ShowErrorSuccess(canastaPos, spriteParam)
     {
-        error_sprite.position.set(  canastaPos.position.x, 
+        spriteParam.position.set(  canastaPos.position.x, 
                                     canastaPos.position.y, 
                                     canastaPos.position.z );
 
-        error_sprite.visible = true;
+        spriteParam.visible = true;
 
-        new TWEEN.Tween(error_sprite.scale)
+        new TWEEN.Tween(spriteParam.scale)
         .to({
             x: 2.5,
             y: 2.5,
             z: 2.5
         }, 100)
         .onComplete(() => {
-            new TWEEN.Tween(error_sprite.scale)
+            new TWEEN.Tween(spriteParam.scale)
             .to({
                 x: 1.5,
                 y: 1.5,
@@ -293,18 +378,12 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
         .easing(TWEEN.Easing.Cubic.In)
         .start();
 
-        // new TWEEN.Tween(error_sprite.material.opacity)
-        //     .to({ x:0
-        //     }, 1000)
-        //     .easing(TWEEN.Easing.Cubic.Out)
-        //     .start();
-
-        setTimeout(function() { HideError(); }, 600);
+        setTimeout(function() { HideSprite(spriteParam); }, 600);
     }
 
-    function HideError() 
+    function HideSprite(spriteNaneParam)
     {
-        error_sprite.visible = false;    
+        spriteNaneParam.visible = false;    
     }
     
     // * =====================================================================================================================================
@@ -348,7 +427,7 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
                 this.mapA = textureLoader.load( basuraTextureArray_basura[Math.floor(Math.random() * basuraTextureArray_basura.length)]);    
             }
 
-            this.material = new THREE.SpriteMaterial( { map: this.mapA, color: 0xffffff, fog: true } );
+            this.material = new THREE.SpriteMaterial( { map: this.mapA, fog: false } );
 
             this.isBeingDragged = false;    
             this.spriteChido = new THREE.Sprite( this.material );
@@ -455,12 +534,15 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
     {
         return;
 
-        const mapAB = textureLoader.load( EDIFICIO_A );
+        const mapAB = textureLoader.load( EDIFICIO_C );
         const material = new THREE.SpriteMaterial( { map: mapAB, color: 0xffffff, fog: true } );
 
         let canastaAB = new THREE.Sprite( material );
         canastaAB.position.set(2, 0.0, 1);
         canastaAB.scale.set(4,4,4);
+        // scene.background = canastaAB;
+
+        scene.setba
         // canastaA.position.normalize();
 
         scene.add(canastaAB);
@@ -523,12 +605,14 @@ loader.load(
 
     function SetCanastas()
     {
+        let yPos = -2.5;
+
         const mapA = textureLoader.load( S_CANASTA_COMPOSTA );
-        const material = new THREE.SpriteMaterial( { map: mapA, color: 0xffffff, fog: true } );
+        const material = new THREE.SpriteMaterial( { map: mapA } );
 
         canasta_Composta_Sprite = new THREE.Sprite( material );
-        canasta_Composta_Sprite.position.set(2, -2.0, 1);
-        canasta_Composta_Sprite.scale.set(1.5,1.5,1);
+        canasta_Composta_Sprite.position.set(3, yPos, 1);
+        canasta_Composta_Sprite.scale.set(canastaScale, canastaScale, canastaScale);
         canasta_Composta_Sprite.renderOrder = 5;
         // canastaA.position.normalize();
 
@@ -542,8 +626,8 @@ loader.load(
         const materialB = new THREE.SpriteMaterial( { map: mapB, color: 0xffffff, fog: true } );
 
         canasta_Reciclable_Sprite = new THREE.Sprite( materialB );
-        canasta_Reciclable_Sprite.position.set(0, -2.0, 1);
-        canasta_Reciclable_Sprite.scale.set(1.5,1.5,1);
+        canasta_Reciclable_Sprite.position.set(0, yPos, 1);
+        canasta_Reciclable_Sprite.scale.set(canastaScale, canastaScale, canastaScale);
         canasta_Reciclable_Sprite.renderOrder = 5;
 
         scene.add(canasta_Reciclable_Sprite);
@@ -554,8 +638,8 @@ loader.load(
         const materialC = new THREE.SpriteMaterial( { map: mapC, color: 0xffffff, fog: true } );
 
         canasta_Basura_Sprite = new THREE.Sprite( materialC );
-        canasta_Basura_Sprite.position.set(-2, -2.0, 1);
-        canasta_Basura_Sprite.scale.set(1.5,1.5,1);
+        canasta_Basura_Sprite.position.set(-3, yPos, 1);
+        canasta_Basura_Sprite.scale.set(canastaScale, canastaScale, canastaScale);
         canasta_Basura_Sprite.renderOrder = 5;
 
         scene.add(canasta_Basura_Sprite);
@@ -566,19 +650,39 @@ loader.load(
         const material_Error = new THREE.SpriteMaterial( { map: map_Error, color: 0xffffff, fog: true } );
 
         error_sprite = new THREE.Sprite( material_Error );
-        // error_sprite.position.set(2, -2.0, 1);
         error_sprite.scale.set(1.5,1.5,1);
         error_sprite.renderOrder = 100;
         error_sprite.visible = false;
-
         scene.add(error_sprite);
-        groupRayCastB.add(error_sprite);
+
+        const map_Success = textureLoader.load( S_SUCCESS );
+        const material_Success = new THREE.SpriteMaterial( { map: map_Success, color: 0xffffff, fog: true } );
+
+        success_sprite = new THREE.Sprite( material_Success );
+        success_sprite.scale.set(3, 3, 3);
+        success_sprite.renderOrder = 100;
+        success_sprite.visible = false;
+
+        scene.add(success_sprite);
     }
 
-    function init() {
+    function AddSpriteToScene(spriteName, refTo, showSprite) 
+    {
+        const map = textureLoader.load( spriteName );
+        const mat = new THREE.SpriteMaterial( { map: map, color: 0xffffff, fog: true } );
 
-        // console.log("Init Test");
+        let sprite = new THREE.Sprite( mat );
+        sprite.scale.set(1.5,1.5,1);
+        sprite.renderOrder = 100;
+        sprite.visible = showSprite;
 
+        scene.add(sprite);
+
+        refTo = sprite;
+    }
+
+    function init() 
+    {
         containerChido = document.createElement( 'div' );
 		document.body.appendChild( containerChido );
 
@@ -592,12 +696,27 @@ loader.load(
         cameraOrtho.position.z = 10;
 
         scene = new THREE.Scene();
-        scene.background = new THREE.Color().setHSL( 0.6, 0, 1 );
+
+        // var bgTexture = new THREE.TextureLoader().load("textures/Background.png");
+        // bgTexture.minFilter = THREE.LinearFilter;
+        // scene.background = bgTexture;
+
+        // scene.background = new THREE.Color().setHSL( 0.6, 0, 1 );
+
+        
+
         // scene.fog = new THREE.Fog( 0x000000, 1500, 2100 );
-        scene.fog = new THREE.Fog( scene.background, 1, 5000 );
+        // scene.fog = new THREE.Fog( scene.background, 1, 5000 );
 
 
-        SetBackground();
+        // SetBackground();
+
+        // AUDIO
+        audioListener = new THREE.AudioListener();
+        camera.add( audioListener );
+
+        // load a sound and set it as the Audio object's buffer
+        audioLoader = new THREE.AudioLoader();
 
         sceneOrtho = new THREE.Scene();
         textureLoader = new THREE.TextureLoader();
@@ -642,15 +761,18 @@ loader.load(
 
         // renderer
 
-        renderer = new THREE.WebGLRenderer();
+        renderer = new  THREE.WebGLRenderer({ alpha: true });
+        
         renderer.setPixelRatio( window.devicePixelRatio );
         renderer.setSize( window.innerWidth, window.innerHeight );
         renderer.autoClear = false; // To allow render overlay on top of sprited sphere
 
-        
-				container.appendChild( renderer.domElement );
-				renderer.outputEncoding = THREE.sRGBEncoding;
-				renderer.shadowMap.enabled = true;
+        renderer.setClearColor( 0x000000, 0 );
+        // scene.background = new THREE.Color( 0xff0000 );
+
+        container.appendChild( renderer.domElement );
+        // renderer.outputEncoding = THREE.sRGBEncoding;
+        renderer.shadowMap.enabled = true;
 
         document.body.appendChild( renderer.domElement );
         document.addEventListener( 'pointermove', onPointerMove );
@@ -658,11 +780,6 @@ loader.load(
         //
 
         window.addEventListener( 'resize', onWindowResize );
-
-        console.log("Init Test 2");
-
-        // objects.push(sprite);
-        // objects.push(testBas);
 
         controls = new threeDragcontrols( [ ... objects ], camera, renderer.domElement );
         
@@ -755,6 +872,8 @@ loader.load(
 		camera.add( listener );
 
         PlaySong();
+
+        AddSpriteToScene(S_PLUS_10, plus_10_sprite, false);
 
         updatePuntos();
         updateVidas();
@@ -855,6 +974,7 @@ loader.load(
         if ( selected_Canasta ) {
 
             selected_Canasta.material.color.set( '#fff' );
+            // selected_Canasta.scale.set(2, 2, 2);
             selected_Canasta = null;
         }
 
@@ -878,6 +998,7 @@ loader.load(
                 selected_Canasta = res.object;
                 console.log("Pointer Move: " + selected_Canasta.name);
                 selected_Canasta.material.color.set( '#08f' );
+                // selected_Canasta.scale.set(2.3, 2.3 , 2.3);
 
             }
 
@@ -954,6 +1075,7 @@ loader.load(
 
     function SetBackground() 
     {
+        // return;
         // LIGHTS
 
 				const hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 0.6 );
@@ -1034,13 +1156,47 @@ loader.load(
 
     function PlaySong() 
     {
-        return;
+        // return;
 
-        const sound1 = new THREE.PositionalAudio( listener );
-        const songElement = document.getElementById( 'song' );
-        sound1.setLoop( true );
-        sound1.setMediaElementSource( songElement );
-        sound1.setRefDistance( 20 );
-        sound1.setVolume( 0.3 );
-        songElement.play();
+        // create a global audio source
+        const sound = new THREE.Audio( audioListener );
+
+        audioLoader.load( 'sounds/TrashCanSong.mp3', function( buffer ) {
+            sound.setBuffer( buffer );
+            sound.setLoop( true );
+            sound.setVolume( 0.3 );
+            sound.play();
+        });
+
+        // const sound1 = new THREE.PositionalAudio( listener );
+        // const songElement = document.getElementById( 'song' );
+        // sound1.setLoop( true );
+        // sound1.setMediaElementSource( songElement );
+        // sound1.setRefDistance( 20 );
+        // sound1.setVolume( 0.3 );
+        // songElement.play();
+    }
+
+    function PlaySound_Error() 
+    {
+        const sound = new THREE.Audio( audioListener );
+
+        audioLoader.load( 'sounds/Wrong.mp3', function( buffer ) {
+            sound.setBuffer( buffer );
+            sound.setLoop( false );
+            sound.setVolume( 0.2 );
+            sound.play();
+        });
+    }
+
+    function PlaySound_Success() 
+    {
+        const sound = new THREE.Audio( audioListener );
+
+        audioLoader.load( 'sounds/Correct.mp3', function( buffer ) {
+            sound.setBuffer( buffer );
+            sound.setLoop( false );
+            sound.setVolume( 0.3 );
+            sound.play();
+        });
     }

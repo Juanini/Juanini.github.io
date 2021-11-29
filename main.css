@@ -1,11 +1,31 @@
+.bg-image {
+	/* The image used */
+	background-image: url("textures/Background.png");
+  
+	/* Add the blur effect */
+	filter: blur(8px);
+	-webkit-filter: blur(8px);
+  
+	/* Full height */
+	height: 100%;
+  
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+  }
+
 body {
 	margin: 0;
-	background-color: #000;
+	background-color: rgb(128, 191, 228);
+	background-image: url("textures/Background.png");
 	color: #fff;
 	font-family: Monospace;
 	font-size: 13px;
 	line-height: 24px;
 	overscroll-behavior: none;
+
+	height: 100%;
 }
 
 a {
@@ -92,7 +112,7 @@ a, button, input, select {
 
 #overlay {
 	position: fixed; /* Sit on top of the page content */
-	display: none; /* Hidden by default */
+	display: none; /*Hidden by default*/
 	width: 100%; /* Full width (cover the whole page) */
 	height: 100%; /* Full height (cover the whole page) */
 	top: 0;
@@ -113,4 +133,6 @@ a, button, input, select {
 	transform: translate(-50%,-50%);
 	-ms-transform: translate(-50%,-50%);
   }
+
+
 
