@@ -27,6 +27,8 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
     let canasta_Basura_Sprite;
     let error_sprite;
     let success_sprite;
+    let next_lvl_sprite;
+    let life_damage_sprite;
 
     let plus_10_sprite = {};
 
@@ -52,6 +54,8 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
     let groupRayCastB;
 
     const  groupBasura = [];
+    const  groupBasura_Positions = [];
+
     const  groupPuntos = [];
 
     let sprite;
@@ -74,9 +78,9 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
     const S_BASURA_PLATANO      = "textures/Platano.png";
     const S_BASURA_PATA         = "textures/PataPollo.png";
     const S_BASURA_AGUACATE     = "textures/Aguacate.png";
-    // const S_BASURA_SOBRAS       = "textures/Limon.png";
+    const S_BASURA_SOBRAS       = "textures/Desperdicios.png";
     const S_BASURA_HAMBUR       = "textures/Hamburguesa.png";
-    // const S_BASURA_MANZANA_1    = "textures/Manzana1.png";
+    const S_BASURA_ARROZ        = "textures/Arroz.png";
 
     // BASURA RECICLABLE
     const S_BASURA_BOTELLA_AGUA = "textures/Agua.png";
@@ -98,6 +102,8 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
     const S_BASURA_Zapato       = "textures/Zapato.png";
     const S_BASURA_MADERA       = "textures/Madera.png";
     const S_BASURA_FOCO         = "textures/Foco.png";
+    const S_BASURA_ROPA         = "textures/Ropa.png";
+    const S_BASURA_ELECTRO      = "textures/Electrico.png";
 
     // EDIFICIOS
     const EDIFICIO_A       = "textures/Build1.png";
@@ -108,15 +114,16 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
     const S_ERROR       = "textures/Error.png";
     const S_SUCCESS       = "textures/Correct.png";
     const S_PLUS_10       = "textures/Plus10.png";
-
+    const S_NEXT_LVL       = "textures/NextLevel.png";
+    
     const basuraTextureArray_Composta = [
         S_BASURA_MANZANA, 
         S_BASURA_PLATANO,
         S_BASURA_PATA,
         S_BASURA_AGUACATE, 
-        // S_BASURA_SOBRAS, 
-        S_BASURA_HAMBUR ]
-        // S_BASURA_MANZANA_1 ]
+        S_BASURA_SOBRAS, 
+        S_BASURA_HAMBUR,
+        S_BASURA_ARROZ ]
 
     const basuraTextureArray_Reciclable = [
         S_BASURA_BOTELLA_AGUA ,
@@ -160,32 +167,78 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
     const vidasLabel  = "vidasLabel";
 
     let velocidadCaida = 0.02;
-    const velocidadCaida_2 = 0.04;
-    const velocidadCaida_3 = 0.05;
-    const velocidadCaida_4 = 0.03;
+    const velocidadCaida_1 = 0.02;
+    const velocidadCaida_2 = 0.03;
+    const velocidadCaida_3 = 0.04;
+    const velocidadCaida_4 = 0.05;
 
     var spawnVariable;
     let spawnTime = 3000;
 
-    let spawnTime_Level2 = 500;
-    let spawnTime_Level3 = 0;
-    let spawnTime_Level4 = 0;
+    let spawnTime_Level2 = 1500;
+    let spawnTime_Level3 = 1000;
+    let spawnTime_Level4 = 500;
 
     var currentLevel = 1;
 
+    const ITEMS_LVL_1 = 4;
+    const ITEMS_LVL_2 = 6;
+    const ITEMS_LVL_3 = 4;
+    const ITEMS_LVL_4 = 6;
+    const ITEMS_LVL_5 = 6;
+    const ITEMS_LVL_6 = 9;
+    const ITEMS_LVL_7 = 6;
+    const ITEMS_LVL_8 = 9;
 
     function IncrementarVelocidad() 
     {
-        if(BASURA_COLLECTED >= 4)
-        {
-            velocidadCaida = velocidadCaida_4;
+        if(currentLevel == 1 && BASURA_COLLECTED >= ITEMS_LVL_1)
+            SetupIncremento(velocidadCaida_2, spawnTime_Level2); // SET LEVEL 2
+        
+        else if(currentLevel == 2 && BASURA_COLLECTED >= ITEMS_LVL_2)
+            SetupIncremento(velocidadCaida_3, spawnTime_Level3); // SET LEVEL 3
 
+        else if(currentLevel == 3 && BASURA_COLLECTED >= ITEMS_LVL_3)
+            SetupIncremento(velocidadCaida_1, spawnTime_Level3); // SET LEVEL 4
+
+        else if(currentLevel == 4 && BASURA_COLLECTED >= ITEMS_LVL_4)
+            SetupIncremento(velocidadCaida_2, spawnTime_Level2); // SET LEVEL 5
+
+        else if(currentLevel == 5 && BASURA_COLLECTED >= ITEMS_LVL_5)
+            SetupIncremento(velocidadCaida_2, spawnTime_Level3); // SET LEVEL 6
+
+        else if(currentLevel == 6 && BASURA_COLLECTED >= ITEMS_LVL_6)
+            SetupIncremento(velocidadCaida_3, spawnTime_Level4); // SET LEVEL 7
+
+        else if(currentLevel == 7 && BASURA_COLLECTED >= ITEMS_LVL_7)
+            SetupIncremento(velocidadCaida_3, spawnTime_Level3); // SET LEVEL 8
+        
+    }
+
+    function SetupIncremento(velocidadParam, spawnSpeedParam) 
+    {
+        currentLevel++;
+        BASURA_COLLECTED = 0;
+
+        document.getElementById("levelImage").src="Nivel" + currentLevel + ".png";
+
+        if (currentLevel <= 8) 
+        {
+            next_lvl_sprite.visible = true;
+            setTimeout(()=> { next_lvl_sprite.visible = false; }, 1600);
+
+            velocidadCaida = velocidadParam;
+            spawnTime = spawnSpeedParam;
+    
             clearInterval(spawnVariable);
-            spawnTime = spawnTime_Level2;
             spawnVariable =  setInterval(function(){ SpawnBasura(); }, spawnTime);
         }
-
+        else
+        {
+            // Juego Completado!!!!
+        }
     }
+
 
     function CheckDrop()
     {
@@ -227,7 +280,7 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
     {
         console.log("=============--------- DROP SUCCESS!!!!!!! -----=======------============");
     
-        SCORE += 125;
+        SCORE += 10;
         BASURA_COLLECTED++;
         updatePuntos();
         IncrementarVelocidad();
@@ -328,11 +381,63 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
 
     }
 
+    var lifeBlinkInterval;
+    var lifeBlinkIter = 0;
+    var lifeBlink = false;
+
+    function LifeDamageBlink() 
+    {
+        lifeBlinkIter++;
+        lifeBlink = !lifeBlink;
+
+        if(lifeBlinkIter > 10)
+        {
+            clearInterval(lifeBlinkInterval);
+            lifeBlinkIter = 0;
+            lifeBlink = false;
+
+            return;
+        }
+
+        if(lifeBlink)
+        {
+            document.getElementById("vidaImage").src= "textures/VidaDamage.png";
+        }
+        else
+        {
+            document.getElementById("vidaImage").src= "Vida.png";
+        }
+
+    }
+
     function Drop_Error(_pos)
     {
         console.log("xxxxxxxxxxxxxxxxXxxxxx     DROP ERROR     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         
         LIFES--;
+
+        clearInterval(lifeBlinkInterval);
+        lifeBlinkInterval =  setInterval(function(){ LifeDamageBlink(); }, 150);
+
+        life_damage_sprite.visible = true;
+        life_damage_sprite.scale.set(1.2, 1.2, 1.2);
+
+        new TWEEN.Tween(life_damage_sprite.scale)
+                    .to({
+                        x: 2.2,
+                        y: 2.2
+                    }, 300).onComplete(() => {
+                        new TWEEN.Tween(life_damage_sprite.scale)
+                        .to({
+                            x: 1.2,
+                            y: 1.2
+                        }, 100)
+                        .easing(TWEEN.Easing.Cubic.Out)
+                        .start().onComplete(()=> {life_damage_sprite.visible = false});
+                    })
+                    .easing(TWEEN.Easing.Cubic.Out)
+                    .start();
+
 
         if (LIFES <= 0) 
         {
@@ -341,7 +446,6 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
         else
         {
             updateVidas();
-
         }
 
         PlaySound_Error();
@@ -400,11 +504,13 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
     
     class Basura 
     {
-        constructor(_basuraId, _basuraType)
+        constructor(_basuraId, _basuraType, _basuraTexture, scaleMulti = 1)
         {   
             this.basuraType = _basuraType;
             this.basuraId = _basuraId;
             this.isActive = false;
+            this.basuraTexture = _basuraTexture;
+            this.scaleMulti = scaleMulti;
 
             this.mapA = null;
 
@@ -425,15 +531,18 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
         {
             if (this.basuraType == BASURA_TYPE_COMPOSTA) 
             {
-                this.mapA = textureLoader.load( basuraTextureArray_Composta[Math.floor(Math.random() * basuraTextureArray_Composta.length)]);    
+                this.mapA = textureLoader.load(this.basuraTexture);
+                // this.mapA = textureLoader.load( basuraTextureArray_Composta[Math.floor(Math.random() * basuraTextureArray_Composta.length)]);
             }
             else if (this.basuraType == BASURA_TYPE_RECICLABE) 
             {
-                this.mapA = textureLoader.load( basuraTextureArray_Reciclable[Math.floor(Math.random() * basuraTextureArray_Reciclable.length)]);    
+                this.mapA = textureLoader.load(this.basuraTexture);
+                // this.mapA = textureLoader.load( basuraTextureArray_Reciclable[Math.floor(Math.random() * basuraTextureArray_Reciclable.length)]);
             }
             else if (this.basuraType == BASURA_TYPE_BASURA) 
             {
-                this.mapA = textureLoader.load( basuraTextureArray_basura[Math.floor(Math.random() * basuraTextureArray_basura.length)]);    
+                this.mapA = textureLoader.load(this.basuraTexture);
+                // this.mapA = textureLoader.load( basuraTextureArray_basura[Math.floor(Math.random() * basuraTextureArray_basura.length)]);
             }
 
             this.material = new THREE.SpriteMaterial( { map: this.mapA, fog: false } );
@@ -441,6 +550,10 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
             this.isBeingDragged = false;    
             this.spriteChido = new THREE.Sprite( this.material );
             this.spriteChido.renderOrder = 10;
+            this.spriteChido.scale.set(this.scaleMulti, this.scaleMulti, this.scaleMulti);
+
+
+            // if(this.spriteChido.sprite.name)
             this.spriteChido.name = this.basuraId;
         }
 
@@ -778,6 +891,53 @@ loader.load(
         success_sprite.visible = false;
 
         scene.add(success_sprite);
+
+        const map_NextLvl = textureLoader.load( S_NEXT_LVL );
+        const material_NextLvl = new THREE.SpriteMaterial( { map: map_NextLvl, color: 0xffffff, fog: true } );
+
+        next_lvl_sprite = new THREE.Sprite( material_NextLvl );
+        next_lvl_sprite.scale.set(6, 1, 2);
+        next_lvl_sprite.position.set(0, 0.5, 1);
+        next_lvl_sprite.position.normalize();
+        next_lvl_sprite.renderOrder = 100;
+        next_lvl_sprite.visible = true;
+
+        var A = new TWEEN.Tween(next_lvl_sprite.scale)
+                    .to({
+                        x: 7,
+                        y: 2
+                    }, 300)
+                    .easing(TWEEN.Easing.Cubic.Out)
+                    .start();
+
+        var B = new TWEEN.Tween(next_lvl_sprite.scale)
+                    .to({
+                        x: 6,
+                        y: 1
+                    }, 300)
+                    .easing(TWEEN.Easing.Cubic.Out);
+
+        A.chain(B);
+        B.chain(A);
+
+        next_lvl_sprite.visible = false;
+
+        scene.add(next_lvl_sprite);
+
+
+        // life_damage_sprite
+        // VidaMenos
+
+        const map_red = textureLoader.load( "textures/VidaMenos.png" );
+        const material_red = new THREE.SpriteMaterial( { map: map_red, color: 0xffffff, fog: true } );
+
+        life_damage_sprite = new THREE.Sprite( material_red );
+        life_damage_sprite.scale.set(1.2, 1.2, 1.2);
+        life_damage_sprite.position.set(0, 0.5, 1);
+        life_damage_sprite.position.normalize();
+        life_damage_sprite.renderOrder = 100;
+        life_damage_sprite.visible = false;
+        scene.add(life_damage_sprite);
     }
 
     function AddSpriteToScene(spriteName, refTo, showSprite) 
@@ -853,27 +1013,57 @@ loader.load(
         SetCanastas();
         SetBuildings();
 
-        for (let i = 0; i < 15; i++) 
-        {
-            groupBasura.push(new Basura("basuraId_C_" + i, BASURA_TYPE_COMPOSTA));
-        }
+        // CREAR BASURA
 
-        for (let j = 0; j < 15; j++) 
-        {
-            groupBasura.push(new Basura("basuraId_R_" + j, BASURA_TYPE_RECICLABE));
-        }
+        // for (let i = 0; i < 15; i++) 
+        // {
+        //     groupBasura.push(new Basura("basuraId_C_" + i, BASURA_TYPE_COMPOSTA));
+        // }
 
-        for (let i = 0; i < 15; i++) 
-        {
-            groupBasura.push(new Basura("basuraId_B_" + i, BASURA_TYPE_BASURA));
-        }
+        // for (let j = 0; j < 15; j++) 
+        // {
+        //     groupBasura.push(new Basura("basuraId_R_" + j, BASURA_TYPE_RECICLABE));
+        // }
+
+        // for (let i = 0; i < 15; i++) 
+        // {
+        //     groupBasura.push(new Basura("basuraId_B_" + i, BASURA_TYPE_BASURA));
+        // }
 
         for (let i = 0; i < 15; i++) 
         {
             groupPuntos.push(new PuntosUX());
         }
 
-
+        groupBasura.push(new Basura("basuraId_C_" + 1, BASURA_TYPE_COMPOSTA, S_BASURA_MANZANA   ));
+        groupBasura.push(new Basura("basuraId_C_" + 2, BASURA_TYPE_COMPOSTA, S_BASURA_PLATANO   ));
+        groupBasura.push(new Basura("basuraId_C_" + 3, BASURA_TYPE_COMPOSTA, S_BASURA_PATA      ));
+        groupBasura.push(new Basura("basuraId_C_" + 4, BASURA_TYPE_COMPOSTA, S_BASURA_AGUACATE  ));
+        groupBasura.push(new Basura("basuraId_C_" + 5, BASURA_TYPE_COMPOSTA, S_BASURA_SOBRAS    ));
+        groupBasura.push(new Basura("basuraId_C_" + 6, BASURA_TYPE_COMPOSTA, S_BASURA_HAMBUR    ));
+        groupBasura.push(new Basura("basuraId_C_" + 7, BASURA_TYPE_COMPOSTA, S_BASURA_ARROZ     ));
+    
+        groupBasura.push(new Basura("basuraId_R_" + 1, BASURA_TYPE_RECICLABE, S_BASURA_BOTELLA_AGUA ));
+        groupBasura.push(new Basura("basuraId_R_" + 2, BASURA_TYPE_RECICLABE, S_BASURA_SODA_CRISTAL ));
+        groupBasura.push(new Basura("basuraId_R_" + 3, BASURA_TYPE_RECICLABE, S_BASURA_SODA_PLASTICO));
+        groupBasura.push(new Basura("basuraId_R_" + 4, BASURA_TYPE_RECICLABE, S_BASURA_BOLSA        ));
+        groupBasura.push(new Basura("basuraId_R_" + 5, BASURA_TYPE_RECICLABE, S_BASURA_Cubiertos    ));
+        groupBasura.push(new Basura("basuraId_R_" + 6, BASURA_TYPE_RECICLABE, S_BASURA_Frasco       ));
+        groupBasura.push(new Basura("basuraId_R_" + 7, BASURA_TYPE_RECICLABE, S_BASURA_CAJA, 1.6         ));
+        groupBasura.push(new Basura("basuraId_R_" + 8, BASURA_TYPE_RECICLABE, S_BASURA_POPOTE       ));
+    
+        groupBasura.push(new Basura("basuraId_B_" + 1, BASURA_TYPE_BASURA, S_BASURA_BUBBLE  ));
+        groupBasura.push(new Basura("basuraId_B_" + 2, BASURA_TYPE_BASURA, S_BASURA_Manguera, 1.5));
+        groupBasura.push(new Basura("basuraId_B_" + 3, BASURA_TYPE_BASURA, S_BASURA_AEROSOL ));
+        groupBasura.push(new Basura("basuraId_B_" + 4, BASURA_TYPE_BASURA, S_BASURA_BATERIA ));
+        groupBasura.push(new Basura("basuraId_B_" + 5, BASURA_TYPE_BASURA, S_BASURA_PANAL   ));
+        groupBasura.push(new Basura("basuraId_B_" + 6, BASURA_TYPE_BASURA, S_BASURA_PAPAS   ));
+        groupBasura.push(new Basura("basuraId_B_" + 7, BASURA_TYPE_BASURA, S_BASURA_Zapato  ));
+        groupBasura.push(new Basura("basuraId_B_" + 8, BASURA_TYPE_BASURA, S_BASURA_MADERA, 1.5  ));
+        groupBasura.push(new Basura("basuraId_B_" + 9, BASURA_TYPE_BASURA, S_BASURA_FOCO    ));
+        groupBasura.push(new Basura("basuraId_B_" + 10, BASURA_TYPE_BASURA, S_BASURA_ROPA, 1.7    ));
+        groupBasura.push(new Basura("basuraId_B_" + 11, BASURA_TYPE_BASURA, S_BASURA_ELECTRO, 1.6    ));
+        
 
         // groupBasura.push(new Basura());
         
@@ -1010,7 +1200,7 @@ loader.load(
         
         if (!shuffleDone) 
         {
-            shuffleDone = true;
+            // shuffleDone = true;
             groupBasura.sort(function() { return 0.5 - Math.random() });
         }
 
@@ -1177,12 +1367,12 @@ loader.load(
 
     function updatePuntos()
     {
-        document.getElementById(puntosLabel).innerHTML = "PUNTOS: " + SCORE;
+        document.getElementById(puntosLabel).innerHTML =  SCORE;
     }
 
     function updateVidas()
     {
-        document.getElementById(vidasLabel).innerHTML = "VIDAS: " + LIFES;
+        document.getElementById(vidasLabel).innerHTML = LIFES;
     }
 
     function ResetGame() 

@@ -6,21 +6,25 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link type="text/css" rel="stylesheet" href="main.css">
 	</head>
-
-    <style>
-    body{
-        margin: 0;
-        }
-    </style>
-
+	
     <body>
 
-		<div class="bg-image"></div>
-
+		<div class="bgimage"></div>
 		<div id="container"></div>
-        <div id="info">
-			<p id="puntosLabel" style="text-align:center; font-size:300%;">PUNTOS: </p>
-            <p id="vidasLabel" style="text-align:center; font-size:300%;">VIDAS: </p>
+		
+		<div id="info"><!--abuelo-->
+			<div class="StatusInfo">
+				<img id="levelImage" src="Nivel1.png" width=400 height=20 align=center>
+				<div class="puntos"><p id="puntosLabel" style="text-align:center;" >0 </p></div>
+				
+			</div>
+            <div class="inst"><font color="black" ><p style="text-align: center;  font-family: roboto; ">Coloca la basura en el cesto que corresponde</p></font></div>
+            <div class="vidas"> <!--padre-->
+				<img id="vidaImage" src="Vida.png" width=85 height=90 align=center>
+				<div class="Lives" id="vidasLabel">5</div><!--hijo-->
+			</div>
+			<div class="logo">	<img src="logo.png" width=160 height=40 align=center> </div>
+			<div class="Time">0:00</div>
 		</div>
 		
 		
