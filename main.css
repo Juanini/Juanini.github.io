@@ -1,13 +1,20 @@
 
 body {
+	background-image: url("Background.jpg");
+	height: 100%;
+
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
 	margin: 0;
-	background-color: #838383;
+	/*background-color: #f3f7f6;*/
 	color: #fff;
 	font-family: Monospace;
 	font-size: 13px;
+	/* font-weight: bold; */
 	line-height: 24px;
 	overscroll-behavior: none;
-	height: 100%;
 }
 
 a {
@@ -84,6 +91,7 @@ a, button, input, select {
 	justify-content: center;
 	flex-direction: column;
 	background: rgba(0,0,0,0.7);
+	font-family: robotoB;
 }
 
 	#overlay button {
@@ -124,6 +132,11 @@ a, button, input, select {
 	src: url(Roboto-Regular.ttf);
 	
   }
+  @font-face {
+	font-family: robotoB;
+	src: url(Roboto-Black.ttf);
+	
+  }
 
   #text{
 	position: absolute;
@@ -138,7 +151,7 @@ a, button, input, select {
 	position: absolute; 
 	right: 10%; 
 	top: 2%;
-	font-size:300%
+	font-size:300%;
 }
 .puntos{
 	position: absolute;
@@ -146,12 +159,14 @@ a, button, input, select {
 	right: 48%;
 	font-family: roboto;
 	font-size:300%;
+	
 }	
 
 .logo{
 	position: absolute;
 	top:  20px;
 	left: 0.5%;	
+	
 }
 .StatusInfo{
 	position: center;
@@ -165,7 +180,7 @@ a, button, input, select {
   	left: 50%;
   	transform: translate(-50%, -50%);
 	
-	font-size:200%
+	font-size:200%;
 	
 }
 .Lives
@@ -174,25 +189,32 @@ a, button, input, select {
 	right: 35px; 
 	top: 37%;
 	font-family: roboto;
-	font-size: 75%
+	font-size: 75%;
+	
 }
 .Time{
 	position: absolute; 
 	right: 50px; 
 	top: 35%;
 	font-family: roboto;
-	font-size:400%
+	font-size:400%;
+	
+}
+.help{
+	position: absolute;
+	top: 110%;
+	right: 1%;
+	z-index: index 3;
 }
 
-.bgimage 
-{
+.bg-image {
 	/* The image used */
-	/* background-image: url("Background.jpg"); */
-	/* background-color: #f00; */
+	/* position: relative; */
+	background-image: url("Background.jpg");
 	
 	/* Add the blur effect */
-	filter: blur(8px);
-	-webkit-filter: blur(8px);
+	filter: blur(5px);
+	-webkit-filter: blur(5px);
 	
 	/* Full height */
 	height: 100%; 
@@ -201,8 +223,4 @@ a, button, input, select {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-  }
-
-  * {
-	box-sizing: border-box;
   }

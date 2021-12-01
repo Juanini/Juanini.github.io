@@ -3,33 +3,57 @@
     <head>
 		<title>MiniGame Separar Basura</title>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
 		<link type="text/css" rel="stylesheet" href="main.css">
 	</head>
-	
-    <body>
 
-		<div class="bgimage"></div>
-		<div id="container"></div>
-		
-		<div id="info"><!--abuelo-->
-			<div class="StatusInfo">
-				<img id="levelImage" src="Nivel1.png" width=400 height=20 align=center>
-				<div class="puntos"><p id="puntosLabel" style="text-align:center;" >0 </p></div>
+    <style>
+    body, html{
+		height: 100%;
+        margin: 0;
+
 				
+        }
+
+		* {
+		box-sizing: border-box;
+		}
+    </style>
+
+    <body>
+		
+        <div id="container">
+			<div  id="info"><!--abuelo-->
+				<!-- <a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> - sprites -->
+				
+				<div class="StatusInfo">
+					<img id="levelImage" src="Nivel1.png" width=400 height=20 align=center>
+					<div class="puntos"><p id="puntosLabel" style="text-align:center;" >00000 </p></div>
+					
+				</div>
+				
+				<div class="inst"><font color="black" ><p style="text-align: center;  font-family: roboto; ">Coloca la basura en el cesto que corresponde:</p></font></div>
+				<div class="vidas"> <!--padre-->
+					<img id="vidaImage" src="Vida.png" width=85 height=90 align=center>
+					<div id="vidasLabel" class="Lives">5</div><!--hijo-->
+				</div>
+				<div class="logo">	<img src="logo.png" width=160 height=40 align=center> </div>
+				<div class="Time">0:00</div>
+				<!-- <div><button>Test</button></div> -->
+			
+				<div class="help">
+					<form action=""><!--Agregar a donde lleva este boton-->
+						<input id="ayuda" type="image" src="InfoIcon.png" alt="Submit"  width="55" height="55">
+					</form>
+				</div>
 			</div>
-            <div class="inst"><font color="black" ><p style="text-align: center;  font-family: roboto; ">Coloca la basura en el cesto que corresponde</p></font></div>
-            <div class="vidas"> <!--padre-->
-				<img id="vidaImage" src="Vida.png" width=85 height=90 align=center>
-				<div class="Lives" id="vidasLabel">5</div><!--hijo-->
-			</div>
-			<div class="logo">	<img src="logo.png" width=160 height=40 align=center> </div>
-			<div class="Time">0:00</div>
 		</div>
+        <!-- <script> src="./index.js"</script> -->
+        <!-- imagen    -->
 		
-		
+
         <div id="overlay">
-			<div id="text" style="font-size:600%;">GAME OVER</div>
+            <div id="text" style="font-size:600%;">GAME OVER</div>
             <div><button id="RetryButton">Intentar de nuevo</button></div>
         </div>
 

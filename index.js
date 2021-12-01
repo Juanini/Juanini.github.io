@@ -39,7 +39,7 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
     var height = 0;
 
     let  textureLoader = null;
-    let containerChido;
+    let container;
 
     let camera, scene, renderer;
     let cameraOrtho, sceneOrtho;
@@ -504,13 +504,15 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
     
     class Basura 
     {
-        constructor(_basuraId, _basuraType, _basuraTexture, scaleMulti = 1)
+        constructor(_basuraId, _basuraType, _basuraTexture, scaleMulti = 1, gold = false)
         {   
             this.basuraType = _basuraType;
             this.basuraId = _basuraId;
             this.isActive = false;
             this.basuraTexture = _basuraTexture;
             this.scaleMulti = scaleMulti;
+
+            this.isGold = gold;
 
             this.mapA = null;
 
@@ -574,12 +576,16 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
 
         setSelected()
         {
-            this.spriteChido.scale.set(1.2, 1.2, 1.2);
+            this.spriteChido.scale.set( this.scaleMulti + 0.2,
+                                        this.scaleMulti + 0.2, 
+                                        this.scaleMulti + 0.2);
         }
 
         setNotSelected()
         {
-            this.spriteChido.scale.set(1, 1, 1);
+            this.spriteChido.scale.set( this.scaleMulti, 
+                                        this.scaleMulti, 
+                                        this.scaleMulti);
         }
 
         setPositionSpawn()
@@ -957,8 +963,9 @@ loader.load(
 
     function init() 
     {
-        containerChido = document.createElement( 'div' );
-		document.body.appendChild( containerChido );
+        // container = document.createElement( 'div' );
+        container = document.getElementById("container");
+		document.body.appendChild( container );
 
         width = window.innerWidth;
         height = window.innerHeight;
@@ -1052,7 +1059,7 @@ loader.load(
         groupBasura.push(new Basura("basuraId_R_" + 7, BASURA_TYPE_RECICLABE, S_BASURA_CAJA, 1.6         ));
         groupBasura.push(new Basura("basuraId_R_" + 8, BASURA_TYPE_RECICLABE, S_BASURA_POPOTE       ));
     
-        groupBasura.push(new Basura("basuraId_B_" + 1, BASURA_TYPE_BASURA, S_BASURA_BUBBLE  ));
+        groupBasura.push(new Basura("basuraId_B_" + 1, BASURA_TYPE_BASURA, S_BASURA_BUBBLE, 1.5));
         groupBasura.push(new Basura("basuraId_B_" + 2, BASURA_TYPE_BASURA, S_BASURA_Manguera, 1.5));
         groupBasura.push(new Basura("basuraId_B_" + 3, BASURA_TYPE_BASURA, S_BASURA_AEROSOL ));
         groupBasura.push(new Basura("basuraId_B_" + 4, BASURA_TYPE_BASURA, S_BASURA_BATERIA ));
@@ -1469,7 +1476,7 @@ loader.load(
 
     function PlaySong() 
     {
-        return;
+        // return;
 
         // create a global audio source
         const sound = new THREE.Audio( audioListener );
