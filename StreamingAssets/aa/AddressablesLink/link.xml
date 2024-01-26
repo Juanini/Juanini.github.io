@@ -5,7 +5,6 @@
     <type fullname="ArcadeButtonsView" preserve="all" />
     <type fullname="NonDrawingGraphic" preserve="all" />
     <type fullname="SunSizeView" preserve="all" />
-    <type fullname="HannieEcho.UI.ControlView" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="Obvious.Soap, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="Obvious.Soap.ScriptableEventNoParam" preserve="all" />
