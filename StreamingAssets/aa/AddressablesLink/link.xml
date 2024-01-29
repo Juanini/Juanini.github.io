@@ -1,13 +1,9 @@
 <linker>
   <assembly fullname="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-    <type fullname="_Core.Scripts.SO.Variables.Arcade" preserve="all" />
     <type fullname="ArcadeButton" preserve="all" />
     <type fullname="ArcadeButtonsView" preserve="all" />
     <type fullname="NonDrawingGraphic" preserve="all" />
     <type fullname="SunSizeView" preserve="all" />
-  </assembly>
-  <assembly fullname="Obvious.Soap, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-    <type fullname="Obvious.Soap.ScriptableEventNoParam" preserve="all" />
   </assembly>
   <assembly fullname="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
     <type fullname="UnityEngine.AddressableAssets.Addressables" preserve="all" />
