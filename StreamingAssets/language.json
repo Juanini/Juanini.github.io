@@ -215,9 +215,9 @@
     "arcade_desc_sun":"Let's play being space explorers and discover what the Sun looks like from different planets in our solar system!",
     "arcade_desc_starry":"Description",
     "arcade_desc_space_journey":"Let's become pilots of a spaceship on a super exciting mission to the stars that are closest to Earth!",
-    "arcade_desc_star_born":"Description"
-
-
+    "arcade_desc_star_born":"Description",
+    
+    "end_game_title": "Thanks for Playing"
 
   },
   "es": {
