@@ -114,6 +114,9 @@
     "menuRetry":"Retry",
     "menuHome":"Home",
     "menuCongratulations":"Congratulations, you've finished the game!",
+    "game_slot_title":"Space Arcade",
+    "game_slot_new":"NEW GAME",
+    "game_slot_continue":"CONTINUE",
 
     "sunWelcome":"Welcome to Arcade Sun!",
     "sunInfo":"Welcome to Arcade Sun! Arcade Sun is a fun game where we play with how close or far planets are from the Sun.\n \nIf you want to move the planet closer to the sun, press the + button. If you want to move it farther away, press the - button. To make the planet go left or right and dodge things in space, use the left < and right > arrow keys.",
@@ -231,6 +234,9 @@
     "menuRetry":"Reintentar",
     "menuHome":"Arcade",
     "menuCongratulations":"Felicidades, has terminado el juego!",
+    "game_slot_title":"Arcade Espacial",
+    "game_slot_new":"NUEVO JUEGO",
+    "game_slot_continue":"CONTINUAR",
 
     "sunWelcome":"¡Bienvenido a Arcade Sol!",
     "sunInfo":"Arcade Sol es un juego divertido donde jugamos con qué tan cerca o lejos están los planetas del Sol.\n \nSi quieres mover el planeta más cerca del sol, presiona el botón +. Si quieres moverlo más lejos, presiona el botón -. Para hacer que el planeta se mueva hacia la izquierda o derecha y esquive cosas en el espacio, usa las flechas izquierda < y derecha >.",
