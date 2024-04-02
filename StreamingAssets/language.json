@@ -138,11 +138,11 @@
     "aboutLibra":"Libra is like cosmic scales in the night sky, part of a star storybook called the zodiac. It's where a goddess keeps everything in balance with twinkling stars!",
     "aboutLeo":"Leo, a starry lion in the night, is a cool constellation in the zodiac tale. With its bright star Regulus, it's like a cosmic king reigning over the celestial wilderness.",
     "aboutPisces":"Pisces, a fishy constellation in the zodiac, is like two cosmic fish swimming in the night sky. With a pair of stars known as Alpha and Beta Piscium, it's a watery wonder up above!",
-    "starry_increment_1_title":"Constellation Libra Complete!",
+    "starry_increment_1_title":"Constelation Libra Complete!",
     "starry_increment_1_text":"The sun is one of billions of stars in our own galaxy.",
-    "starry_increment_2_title":"Constellation Leo Complete!",
+    "starry_increment_2_title":"Constelation Leo Complete!",
     "starry_increment_2_text":"Even though the sun is very, very far away from where we live on Earth, it's still a lot closer to us than any other twinkling stars we see in the night sky.",
-    "starry_increment_3_title":"Constellation Pisces Complete!",
+    "starry_increment_3_title":"Constelation Pisces Complete!",
     "starry_increment_3_text":"Stars are like a mix of different sizes and distances from us. Some are huge, bigger than you can imagine, and others are smaller. They're also not all the same distance away from Earth. Some are closer like the Sun, and others are way, way far away like Alpha Centauri.",
     "starry_help_title":"About Arcade Starry",
     "starry_help_text":"Arcade Starry is about identifying special-looking stars in the sky, and with the guidance of the constellation reference, we connect the stars so it matches the guide constellation.\n \nTo connect two stars, first click on one and then on another. To deselect a star, click on it again. To remove a star connection, click on the dotted line.",
@@ -154,7 +154,9 @@
     "journeyInfo":"Welcome to Arcade Space Journey, in this arcade we will travel to the two nearest stars to Earth, first to the Sun of our solar system and then to Alpha Centauri A, located in the Alpha Centauri star system at 4.36 light-years away.\n \nYour mission is to control the spacecraft, dodging asteroids and satellites using the left < and right > buttons.",
     "journey_increment_1_title":" ",
     "journey_increment_1_text":"The sun is one of billions of stars in our own galaxy. The sun is like a huge glowing ball in the sky. It looks bigger and shines brighter than other stars because it's much closer to us on Earth.",
+    "journey_increment_2_title":"Congratulations you arrive the Sun.",
     "journey_increment_2_text":"Even though the sun is very, very far away from where we live on Earth, it's still a lot closer to us than any other twinkling stars we see in the night sky. The sun is like a giant compared to Earth – it's way, way bigger! But because it's so far away from us, it looks small, like a bright dot in the sky.",
+    "journey_increment_3_title":"Congratulations you arrive Alpha Centauri.",
     "journey_increment_3_text":"Stars are all different: some are really big and others are smaller. They are also at different distances from Earth. To look at stars that are super far away from Earth, like Alpha Centauri, we use special tools like telescopes, which are like super-powerful binoculars.",
     "journey_help_title":"About Arcade Space Journey",
     "journey_help_text":"Arcade Space Journey is a game where your dodging skills are put to the test. As you travel to Alpha Centauri, you will have to dodge obstacles with the < left and > right buttons.\n \nIf your ship gets damaged by obstacles, keep an eye out for green first aid kits to repair your ship. Be careful! If your ship is hit three times, the game is over!",
@@ -204,7 +206,7 @@
 
 
 
-    "arcade_sun_welcome":"Welcome to Arcade Sun!\n \nArcade Sun is a fun game where we play with how close or far planets are from the Sun.\n \nIf you want to move the planet closer to the sun, press the + button. If you want to move it farther away, press the - button. To make the planet go left or right and dodge things in space, use the left < and right > buttons.",
+    "arcade_sun_welcome":"Welcome to Arcade Sun! \nArcade Sun is a fun game where we play with how close or far planets are from the Sun. \nIf you want to move the planet closer to the sun, press the + button. If you want to move it farther away, press the - button. To make the planet go left or right and dodge things in space, use the left < and right > buttons.",
     "arcade_sun_mission_success":"MISSION SUCCESS!",
     
     "arcade_name_sun":"Arcade Sun",
@@ -217,17 +219,8 @@
     "arcade_desc_space_journey":"Let's become pilots of a spaceship on a super exciting mission to the stars that are closest to Earth!",
     "arcade_desc_star_born":"What are stars made of? Light? Heat? Sparkles? Let's make our own star!",
     
-    "end_game_title": "Thanks for Playing",
-    
-    "arcade_completed": "COMPLETED",
-    "arcade_uncompleted": "UNCOMPLETED",
-    
-    "high": "High",
-    "medium": "Medium",
-    "low": "Low",
-    "off": "Off",
-    "on": "On"
-    
+    "end_game_title": "Thanks for Playing"
+
   },
   "es": {
     "cancelSpeakText":" ",
@@ -239,16 +232,16 @@
     "menuConfirmNo":"No",
     "menuContinue":"Continuar",
     "menuResume":"Resumir",
-    "menuPlay":"¡Jugar!",
+    "menuPlay":"Jugar!",
     "menuRetry":"Reintentar",
     "menuHome":"Arcade",
-    "menuCongratulations":"¡Felicidades, has terminado el juego!",
-    "game_slot_title":"Space Arcade",
+    "menuCongratulations":"Felicidades, has terminado el juego!",
+    "game_slot_title":"Arcade Espacial",
     "game_slot_new":"NUEVO JUEGO",
     "game_slot_continue":"CONTINUAR",
 
-    "sunWelcome":"¡Bienvenido a Arcade Sun!",
-    "sunInfo":"Arcade Sun es un juego divertido donde jugamos con qué tan cerca o lejos están los planetas del Sol.\n \nSi quieres mover el planeta más cerca del sol, presiona el botón +. Si quieres moverlo más lejos, presiona el botón -. Para hacer que el planeta se mueva hacia la izquierda o derecha y esquive cosas en el espacio, usa las flechas izquierda < y derecha >.",
+    "sunWelcome":"¡Bienvenido a Arcade Sol!",
+    "sunInfo":"Arcade Sol es un juego divertido donde jugamos con qué tan cerca o lejos están los planetas del Sol.\n \nSi quieres mover el planeta más cerca del sol, presiona el botón +. Si quieres moverlo más lejos, presiona el botón -. Para hacer que el planeta se mueva hacia la izquierda o derecha y esquive cosas en el espacio, usa las flechas izquierda < y derecha >.",
     "sun_increment_1_title":"¡Nivel Completado!",
     "sun_increment_1_text":"El sol es la estrella más brillante en el cielo porque estamos muy cerca de él.",
     "sun_increment_2_text":"Cuando estamos lejos de algo, parece más pequeño y tenue. Esto también es cierto para las estrellas; cuanto más lejos están, más pequeñas y tenues parecen.",
@@ -259,8 +252,8 @@
     "sun_help_title":"Acerca de Arcade Sun",
     "sun_help_text": "Arcade Sun trata sobre reconocer qué tan lejos están algunos planetas del sol. Al igual que en la vida real, si colocamos un objeto más cerca de nuestros ojos, parece mucho más grande de lo que realmente es. \n \nCon la ayuda de los botones + y - podemos acercarnos y alejarnos del sol, ¡como traer un objeto muy cerca entre nuestros ojos!",
 
-    "starryWelcome":"¡Bienvenido a Arcade Starry!",
-    "starryInfo":"El Sol es una de billones de estrellas en nuestra galaxia. Parece ser más grande y brillante que otras estrellas porque está más cerca de la tierra.\n \nLas estrellas varían en su tamaño y distancia de la tierra. Las constelaciones son grupos de estrellas que forman patrones en el cielo de noche, algunas las usamos para orientarnos.\\n¡Ven y aprende a identificar constelaciones tan fácilmente como dibujar en el cielo nocturno!",
+    "starryWelcome":"¡Bienvenido a Arcade Cielo Estrellado!",
+    "starryInfo":"El Sol e suna de billones de estrellas en nuestra galaxia. Parece ser más grande y brillante que otras estrellas porque está más cerca de la tierra.\n \nLas estrellas varían en su tamaño y distancia de la tierra. Las constelaciones son grupos de estrellas que forman patrones en el cielo de noche, algunas las usamos para orientarnos.\\n¡Ven y aprende a identificar constelaciones tan fácilmente como dibujar en el cielo nocturno!",
     "libraName":"Libra",
     "leoName":"Leo",
     "piscesName":"Piscis",
@@ -279,13 +272,15 @@
     "shipIntegrity":"Salud de Nave",
     "distanceLabel":"Distancia:",
     "distanceMiles":"Millas de la Tierra",
-    "journeyWelcome":"¡Bienvenido a Arcade Space Journey!",
-    "journeyInfo":"Bienvenido a Arcade Space Journey, en este arcade viajaremos a dos de las estrellas más cercanas a la tierra, primero al sol de nuestro sistema solar y luego a Alpha Centauri A, localizada en el sistema solar Alpha Centauri a 4.36 años luz.\n \nTu misión será controlar la nave, evadiendo asteroides y satélites usando los botones de izquierda < y derecha >.",
+    "journeyWelcome":"¡Bienvenido a Arcade Viaje Espacial!",
+    "journeyInfo":"Bienvenido a Arcade Viaje Espacial, en este arcade viajaremos a dos de las estrellas más cercanas a la tierra, primero al sol de nuestro sistema solar y luego a Alpha Centauri A, localizada en el sistema solar Alpha Centauri a 4.36 años luz.\n \nTu misión será controlar la nave, evadiendo asteroides y satélites usando los botones de izquierda < y derecha >.",
     "journey_increment_1_title":" ",
     "journey_increment_1_text":"El sol es una de las miles de millones de estrellas en nuestra propia galaxia. El sol es como una enorme bola brillante en el cielo. Se ve más grande y brilla más que otras estrellas porque está mucho más cerca de nosotros en la Tierra.",
+    "journey_increment_2_title":"¡Felicidades, has llegado al Sol!",
     "journey_increment_2_text":"Aunque el sol está muy, muy lejos de donde vivimos en la Tierra, está mucho más cerca de nosotros que cualquier otra estrella titilante que vemos en el cielo nocturno. ¡El sol es gigante en comparación con la Tierra. Pero como está tan lejos de nosotros, parece pequeño, como un punto brillante en el cielo.",
+    "journey_increment_3_title":"¡Felicidades, has llegado a Alpha Centauri!",
     "journey_increment_3_text":"Las estrellas son todas diferentes: algunas son realmente grandes y otras más pequeñas. También están a diferentes distancias de la Tierra. Para mirar estrellas que están súper lejos de la tierra, como Alfa Centauri, usamos herramientas especiales como telescopios, que son como binoculares súper potentes.",
-    "stageLog_1":"Viajando al Sol.",
+    "stageLog_1":"Viajando a el Sol.",
     "travelLog_1":"¡Ruta establecida hacia Alfa Centauri, el sistema solar más cercano al Sol!",
     "approachMoon":"Acercándose a la Luna",
     "moonLog":"La Luna es el satélite más cercano a la tierra. Suele creerse que produce su propia luz, sin embargo, es la luz del sol la cual esta refleja.",
@@ -297,9 +292,9 @@
     "sunLog":"El Sol es nuestra gran y brillante bola de luz en el cielo. No es un planeta, sino una súper caliente estrella que nos mantiene acogedores e iluminados en la Tierra. Pero, recuerda, ¡no la mires directamente!",
     "stageLog_2":"Viajando hacia el cinturón de Kuiper.",
     "approachMars":"Acercándose a Marte",
-    "marsLog":"Marte, el planeta rojo, es una aventura polvorosa con antiguos secretos. Es el cuarto planeta a partir del sol y solía tener agua. Impresionante, ¿verdad?",
+    "marsLog":"Marte, el planeta rojo, es una aventura polvoriza con antiguos secretos. Es el cuarto planeta a partir del sol y solía tener agua. Impresionante, ¿verdad?",
     "approachJupiter":"Acercándose a Júpiter",
-    "jupiterLog":"Júpiter es algo así como una colosal obra de arte con patrones remolinados. Es el planeta más grande del sistema solar, cerca de 1,300 veces el tamaño de la Tierra, y es nuestro escudo gravitacional.",
+    "jupiterLog":"Júpiter es algo así como una colosal obra de arte con patrones remolinosos. Es el planeta más grande del sistema solar, cerca de 1,300 veces el tamaño de la Tierra, y es nuestro escudo gravitacional.",
     "approachSaturn":"Acercándose a Saturno",
     "saturnLog":"Saturno, el maestro de los aros en nuestro pequeño circo cósmico. Impresionantes aros y glamour de gigante de gas.",
     "approachUranus":"Acercándose a Urano",
@@ -311,19 +306,19 @@
     "plutoLog":"Pluto es el pequeño rebelde que solía ser el noveno planeta. Ahora es un planeta enano, pero sigue siendo un mundo fascinante a las afueras de nuestro sistema solar.",
     "stageLog_3":"Viajando a través de la nube de Oort, !Incrementando la velocidad!",
     "travelLog_3":"La nube de Oort es un frío puesto de guardia alrededor de nuestro sistema solar, lleno de billones de cometas. Es como una esfera congelada, manteniendo vigilancia de las afueras cósmicas.",
-    "travelLog_4":"Mientras que el cinturón de Kuiper es la dona cercana más allá de Neptuno con objetos congelados, incluyendo Pluto, la nube de Oort es aquél reino salvaje lejos del sol que hospeda billones de cometas de una manera más dispersa.",
+    "travelLog_4":"Mientras que el cinturón de Kuiper es la dona cercana más allá de Neptuno con objetos congelados, incluyendo Pluto, la nube de Oort es aquél reino salvaje léjos del sol que hospeda billones de cometas de una manera más dispersa.",
     "stageLog_4":"Viajando hacia Alfa Centauri.",
     "travelLog_5":"Alfa centauri es nuestro vecino de tres estrellas a 4 años luz de nuestro sistema solar. Es casa de las estrellas A, B y Próxima Centauri. ¡Emocionante potencial para planetas y futura exploración!",
     "approachProxima":"Acercándose a Próxima Centauri, disminuyendo la velocidad...",
     "travelLog_6":"¡Conoce a Próxima Centauri, la estrella más cercana al Sol! Es un enano rojo con potencial de exoplanetas, que son planetas que no están en nuestro sistema solar. ¡Es un  miembro impresionante de nuestro vecindario cósmico!",
     "journey_help_title": "Acerca de Arcade Space Journey",
-    "journey_help_text": "Arcade Space Journey es un juego donde tus habilidades para esquivar se ponen a prueba. Mientras viajas a Alpha Centauri, tendrás que esquivar los obstáculos entrantes con las flechas izquierda y derecha que se encuentran justo debajo. \n \nSi tu nave resulta dañada por obstáculos, mantente atento a los botiquines verdes, estos repararán tu nave. ¡Cuidado! Después de que tú nave sea golpeada tres veces, ¡se acabó el juego!",
+    "journey_help_text": "Arcade Space Journey es un juego donde tus habilidades para esquivar se ponen a prueba. Mientras viajas a Alpha Centauri, tendrás que esquivar los obstáculos entrantes con las flechas izquierda y derecha que se encuentran justo debajo. \n \nSi tu nave resulta dañada por obstáculos, mantente atento a los botiquines verdes, estos repararán tu nave. ¡Cuidado! Después de que tu nave sea golpeada tres veces, ¡se acabó el juego!",
 
     "starBornWelcome":"¡Bienvenido a Arcade Nacimiento de Estrella!",
-    "starBornInfo":"El sol y otras estrellas son cuerpos celestiales naturales en el cielo que emiten su propia luz.\n \nLas estrellas son esferas de gas muy calientes y brillantes. Las condiciones para que las estrellas puedan nacer son específicas. Escoge los niveles apropiados de gas, temperatura y brillo para moldear una estrella. Una vez que las tres luces debajo de la estrella se tornen amarillas, presiona el gran botón rojo.",
+    "starBornInfo":"El sol y otras estrellas son cuerpos celestiales naturales en el cielo que emiten su propia luz.\n \nLas estrellas son esferas de gas muy calientes y brillantes. Las condiciones para que las estrellas puedan nacer son específicas. Escoge los niveles apropiados de gas, temperatura y radiación para moldear una estrella. Una vez que las tres luces debajo de la estrella se tornen amarillas, presiona el gran botón rojo.",
     "starGas":"Gas",
     "starTemperature":"Temperatura",
-    "starRadiation":"Brillo",
+    "starRadiation":"Radiación",
     "born_increment_1_title":"¡Una nueva estrella ha nacido!",
     "born_increment_1_text":"El brillo del sol y otras estrellas no es un reflejo de la luz; ¡ellas de hecho producen su propia luz! Dentro de ellas, ocurren reacciones muy especiales, parecidas a fuegos artificiales poderosos, que crean luz.",
     "born_increment_2_text":"Las estrellas son como balones brillantes, pero están rellenas de gas y son muy muy calientes, tan calientes que producen su propia luz.",
@@ -331,7 +326,7 @@
     "born_help_title": "Acerca de Arcade Star Born",
     "born_help_text": "Arcade Star Born trata sobre aprender de qué están hechas las estrellas. Para conocer el nivel requerido de cualquier elemento, presta atención a la barra de progreso verde asociada a cada elemento. Entonces, si la barra de gas está casi llena, ¡significa que tendrás que elegir un botón de número grande de gas! \n \nUna vez que todos los elementos estén estabilizados, señalados por las tres luces amarillas bajo la estrella, presiona el botón rojo grande para crear otra estrella.",
 
-    "arcade_sun_welcome":"¡Bienvenido a Arcade Sun! \nArcade Sun es un juego divertido donde jugamos con qué tan cerca o lejos están los planetas del Sol.\n \nSi quieres mover el planeta más cerca del sol, presiona el botón +. Si quieres moverlo más lejos, presiona el botón -. Para hacer que el planeta se mueva hacia la izquierda o derecha y esquive cosas en el espacio, usa las flechas izquierda < y derecha >.",
+    "arcade_sun_welcome":"¡Bienvenido a Arcade Sun! \nArcade Sun es un juego divertido donde jugamos con qué tan cerca o lejos están los planetas del Sol.",
     "arcade_sun_mission_success":"¡ÉXITO EN LA MISIÓN!",
 
     "arcade_name_sun":"Arcade Sun",
@@ -344,16 +339,7 @@
     "arcade_desc_space_journey":"¡Vamos a ser pilotos de una nave espacial en una misión súper emocionante hacia las estrellas que están más cerca de la Tierra!",
     "arcade_desc_star_born":"¿De qué están hechas las estrellas? ¿Luz? ¿Calor? ¿Destellos? ¡Vamos a crear nuestra propia estrella!",
 
-    "end_game_title": "Gracias por Jugar",
-
-    "arcade_completed": "COMPLETADO",
-    "arcade_uncompleted": "INCOMPLETADO",
-
-    "high": "Alto",
-    "medium": "Medio",
-    "low": "Bajo",
-    "off": "Encendido",
-    "on": "Apagado"
+    "end_game_title": "Gracias por Jugar"
   }
 }
   
