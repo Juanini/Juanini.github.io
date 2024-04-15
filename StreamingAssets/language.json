@@ -132,6 +132,9 @@
 
     "starryWelcome":"Welcome to Arcade Starry!",
     "starryInfo":"The sun is one of billions of stars in our own galaxy. It appears larger and brighter than other stars because it is much closer to Earth.\n \nStars range greatly in their size and distance from Earth. The constellations are groups of stars that form patterns in the night sky, some constellations help us to orient ourselves.Come learn how to identify constellations just like drawing in the night sky!",
+    "starryInstructions_1":"Join the stars together to create the constellation.",
+    "starryInstructions_2":"Touch two stars to join them together.",
+    "starryInstructions_3":"To delete a line touch it.",
     "libraName":"Libra",
     "leoName":"Leo",
     "piscesName":"Pisces",
@@ -219,8 +222,11 @@
     "arcade_desc_space_journey":"Let's become pilots of a spaceship on a super exciting mission to the stars that are closest to Earth!",
     "arcade_desc_star_born":"What are stars made of? Light? Heat? Sparkles? Let's make our own star!",
     
-    "end_game_title": "Thanks for Playing"
-
+    "end_game_title": "Thanks for Playing",
+    
+    "how_to_play_title": "How To play!",
+    "how_to_play_sun_game_a": "Get to the right size of the sun.",
+    "how_to_play_sun_game_b": "By moving the planet with the arrows."
   },
   "es": {
     "cancelSpeakText":" ",
@@ -253,7 +259,10 @@
     "sun_help_text": "Arcade Sun trata sobre reconocer qué tan lejos están algunos planetas del sol. Al igual que en la vida real, si colocamos un objeto más cerca de nuestros ojos, parece mucho más grande de lo que realmente es. \n \nCon la ayuda de los botones + y - podemos acercarnos y alejarnos del sol, ¡como traer un objeto muy cerca entre nuestros ojos!",
 
     "starryWelcome":"¡Bienvenido a Arcade Cielo Estrellado!",
-    "starryInfo":"El Sol e suna de billones de estrellas en nuestra galaxia. Parece ser más grande y brillante que otras estrellas porque está más cerca de la tierra.\n \nLas estrellas varían en su tamaño y distancia de la tierra. Las constelaciones son grupos de estrellas que forman patrones en el cielo de noche, algunas las usamos para orientarnos.\\n¡Ven y aprende a identificar constelaciones tan fácilmente como dibujar en el cielo nocturno!",
+    "starryInfo":"El Sol e suna de billones de estrellas en nuestra galaxia. Parece ser más grande y brillante que otras estrellas porque está más cerca de la tierra.\n \nLas estrellas varían en su tamaño y distancia de la tierra. Las constelaciones son grupos de estrellas que forman patrones en el cielo de noche, algunas las usamos para orientarnos.\n¡Ven y aprende a identificar constelaciones tan fácilmente como dibujar en el cielo nocturno!",
+    "starryInstructions_1":"Une las estrellas para crear la constelación.",
+    "starryInstructions_2":"Toca dos estrellas para unirlas.",
+    "starryInstructions_3":"Toca la línea para eliminarla.",
     "libraName":"Libra",
     "leoName":"Leo",
     "piscesName":"Piscis",
